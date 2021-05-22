@@ -93,7 +93,7 @@ function App() {
     <BrowserRouter>
       <div className="grid-container">
         <header className="row-home"  style={{ height: "75px" }}>
-          <div className="btn-header" style={{ width: "30%", float: "left" }}>
+          <div className="btn-header " style={{ width: "30%", float: "left" }}>
             <button
               type="button"
               className="open-sidebar"
@@ -106,7 +106,7 @@ function App() {
             </Link>
           </div>
           <div
-          className="option-navbar"
+          className="option-navbar btn-header-responsive"
           style={{ width: "30%", float: "left", lineHeight: "30px" }}
           >
             <Route
@@ -115,8 +115,8 @@ function App() {
               )}
             ></Route>
           </div>
-          <div className=""
-            style={{ width: "40%", float: "left", lineHeight: "80px" }}>
+          <div className="nav-responsive"
+            style={{ width: "40%" , float: "left", lineHeight: "80px" }}>
               <div
               className="navbar-option"
               style={{ float: "left", width: "20%", lineHeight: "80px" }}
@@ -142,7 +142,9 @@ function App() {
 
 
             {userInfo ? (
-              <div className="dropdown navbar-option" style={{ width: "30%" }}>
+              <div className="dropdown navbar-option"
+              //  style={{ width: "30%" }}
+               >
                 <Link to="#">
                 <i className="fas fa-user mr-3"></i>
                   {userInfo.name} <i className="fa fa-caret-down"></i>{' '}
@@ -283,7 +285,7 @@ function App() {
             </li>
           </ul>
         </aside>
-        <main>
+        <main className= 'body-responsive'> 
         <Route path="/aboutUs" component={AboutUsScreen}></Route>
           <Route path="/seller/:id" component={SellerScreen}></Route>
           <Route path="/seller/:id" component={SellerTableScreen}></Route>

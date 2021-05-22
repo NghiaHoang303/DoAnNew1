@@ -637,6 +637,101 @@ h1 {
   padding-top: 40px;
 }
 
+@media only screen and (max-width: 1440px) {
+  .img-responsive {
+    position: absolute;
+    right: -100px;
+  }
+  .img-contact2 > img {
+    float: left;
+    width: 35%;
+    /* width: 400px; */
+    height: 280px;
+    margin: 5px;
+  
+    border: solid white 15px;
+    border-bottom: 3em solid #fff;
+    border-radius: 0.25em;
+    box-shadow: 1em 1em 2em 0.25em rgba(0, 0, 0, 0.2);
+    margin: 2em 3em;
+    opacity: 0;
+    transform: translateY(4em) rotateZ(-5deg);
+    transition: transform 4s 0.25s cubic-bezier(0, 1, 0.5, 1),
+      opacity 0.3s 0.25s ease-out;
+    max-width: 300px;
+    width: 90%;
+    will-change: transform, opacity;
+  }
+  #header .header-general .img-dish-header {
+    height: 200px;
+    margin-top: 84px;
+    margin-left: 100px;
+    margin-bottom: -67px;
+    width: 50%;
+    border-radius: 2rem;
+    margin-right: 120px;
+  }
+  .style-reponsive  {
+    width: 360px !important;
+  }
+  .content-left-services {
+    width: 800px !important;
+    margin-left: 0 !important;
+  }
+  .content-left-services > img{
+    /* margin: 50px !important; */
+  }
+  .content-right-services {
+    margin-right: 200px;
+  }
+  .video-edit {
+    width: 700px !important;
+    height: 512px !important;
+  }
+  .img-responsive-special {
+    margin-top: -111px !important;
+
+  }
+  .content-right-book .book-btn {
+    width: 300px;
+  height: 260px;
+  /* background-color: #e84c3d;
+  color: white; */
+  background: transparent;
+  background-repeat: no-repeat;
+  font-size: 20px;
+  line-height: 54px; 
+  position: absolute;
+  top : 100px;
+  left: 538px;
+  border-radius:20% ;
+  background-image: url(../scss/images/gif15.gif);
+  }
+.contact-input-left {
+
+  margin-top: -400px !important;
+}
+.img-contact2 > img {
+  width: 250px !important;
+  height: 280px;
+  margin: 5px;
+
+  border: solid white 15px;
+  border-bottom: 3em solid #fff;
+  border-radius: 0.25em;
+  box-shadow: 1em 1em 2em 0.25em rgba(0, 0, 0, 0.2);
+  margin: 2em 3em;
+  opacity: 0;
+  transform: translateY(4em) rotateZ(-5deg);
+  transition: transform 4s 0.25s cubic-bezier(0, 1, 0.5, 1),
+    opacity 0.3s 0.25s ease-out;
+  max-width: 300px;
+  width: 90%;
+  will-change: transform, opacity;
+}
+
+}
+
 /*
 @-webkit-keyframes slide-out-blurred-top {
   0% {

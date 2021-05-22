@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "../scss/homeScreen.css";
 
 export default function SearchBox(props) {
   const [name, setName] = useState('');
@@ -8,7 +9,7 @@ export default function SearchBox(props) {
   };
   return (
     <form className="search form-inline md-form mr-auto mb-4" onSubmit={submitHandler}>
-      <div className="row " style={{ width: "500px", fontSize :'15px'}}>
+      <div className="row style-reponsive " style={{ width: "500px", fontSize :'15px'}}>
         <input
          className="form-control mr-sm-2 col-10 p-3"
          style={{ width: "70%", fontSize: "20px", color: "white" }}

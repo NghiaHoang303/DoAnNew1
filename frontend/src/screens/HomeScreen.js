@@ -225,7 +225,7 @@ export default function HomeScreen() {
                 className=" "
                 style={{ float: "left" }}
               >
-                <a  className ='img-right img-contact2' href = 'http://localhost:32775/product/60a60f0667996e38598ff3f5'>
+                <a  className ='img-right img-contact2 ' href = 'http://localhost:32775/product/60a60f0667996e38598ff3f5'>
                 <img
                   style={{ marginRight: "-10px" }}
                   className="img-beauty1 show-on-scroll img-dish-header  img-fluid"
@@ -233,10 +233,10 @@ export default function HomeScreen() {
                 ></img>
                 </a>
               </div>
-              <div className="">
-               <a className= 'img-right img-contact2 ' href = 'http://localhost:32775/product/60a60ceadd7752112d1ece31'>
+              <div className="img-responsive">
+               <a className= 'img-right img-contact2  ' href = 'http://localhost:32775/product/60a60ceadd7752112d1ece31'>
                <img
-                  className="img-beauty1 show-on-scroll img-dish-header  img-fluid"
+                  className="img-beauty1 show-on-scroll img-dish-header img-fluid "
                   src="https://cdn.gobankingrates.com/wp-content/uploads/2019/07/Macaroni-Cheese-iStock-500802479.jpg"
                 ></img>
                </a>
@@ -367,7 +367,7 @@ export default function HomeScreen() {
             <div className="" data-aos="zoom-in-up">
               <Link className="">
                 <img
-                  className="img-card box"
+                  className="img-card box img-responsive-special"
                   style={{ marginTop: "-200px" }}
                   src="https://vinlove.net/wp-content/uploads/2020/11/dac-san-quang-tri-banh-it-la-gai.jpg"
                 ></img>

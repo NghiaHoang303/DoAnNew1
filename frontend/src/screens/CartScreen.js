@@ -44,7 +44,7 @@ export default function CartScreen(props) {
 
             >Go Shopping</Link>
           </MessageBox>
-          <img src ={hinh1} className ='w-200'
+          <img src ={hinh1} className ='w-200 img-card-table-responsive'
           style ={{
           borderRadius: '20%',
           width:'800px',
@@ -140,7 +140,7 @@ export default function CartScreen(props) {
         
       </div>
       <div className="col-1">
-        <div className="card card-body" style ={{top :'80px'}}>
+        <div className="card card-body card-responsive-table" style ={{top :'80px'}}>
           <ul>
             <li>
               <h2>

@@ -75,3 +75,9 @@
 .search-inbox:focus {
   outline: none;
 }
+
+@media only screen and (max-width : 1440px) {
+  .content-chat-box {
+    width: 500px;
+  }
+}

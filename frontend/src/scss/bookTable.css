@@ -22,3 +22,12 @@
 .link-transform:hover{
   color: rgb(0, 172, 86);
 }
+
+@media only screen and (max-width: 1440px){
+  .img-card-table-responsive{
+    width: 500px !important;
+  }
+  .card-responsive-table{
+    top : 0 !important;
+  }
+}

@@ -83,7 +83,7 @@ export default function SearchScreen(props) {
           </select>
         </div>
       </div>
-      <div className="row top">
+      <div className="row top body-search-responsive">
         <div className="col department-menu">
         <h3
             className="session-menu"

@@ -80,10 +80,12 @@ export default function OrderScreen(props) {
     <div>
       <h1>Order {order._id}</h1>
       <div className="row top">
-        <div className="">
-          <ul>
-            <li className="col" style={{ display: "inline-block" }}>
-              <div className="card card-body card-Oder-Screen ">
+        <div className="content-body-responsive">
+          <ul className ='' style = {{width :'60%'}}>
+            <li className="col" 
+            // style={{ display: "inline-block" }}
+            >
+              <div className="card card-body card-body-new card-Oder-Screen ">
                 <h2>Shippring</h2>
                 <p>
                   <strong>Name:</strong> {order.shippingAddress.fullName} <br />
@@ -101,8 +103,10 @@ export default function OrderScreen(props) {
                 )}
               </div>
             </li>
-            <li className="col " style={{ display: "inline-block" }}>
-              <div className="card card-body card-Oder-Screen">
+            <li className="col "
+            //  style={{ display: "inline-block" }}
+             >
+              <div className="card card-body card-body-new card-Oder-Screen">
                 <h2>Payment</h2>
                 <p>
                   <strong>Method:</strong> {order.paymentMethod}
@@ -116,8 +120,10 @@ export default function OrderScreen(props) {
                 )}
               </div>
             </li>
-            <li  className="col " style={{ display: "inline-block" }}>
-              <div className="card card-body card-Oder-Screen">
+            <li  className="col " 
+            // style={{ display: "inline-block" }}
+            >
+              <div className="card card-body card-body-new card-Oder-Screen">
                 <h2>Order Items</h2>
                 <ul>
                   {order.orderItems.map((item) => (
@@ -149,10 +155,10 @@ export default function OrderScreen(props) {
         </div>
         <div className="">
           <div 
-           className="card card-body card-Oder-Screen"
+           className="card nav-car card-Oder-Screen card-Oder-Screen-place-responsive "
            style={{ height: "500px" }}
           >
-            <ul>
+            <ul className =''>
               <li>
                 <h2>Order Summary</h2>
               </li>

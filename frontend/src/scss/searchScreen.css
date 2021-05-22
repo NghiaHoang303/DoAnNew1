@@ -65,3 +65,28 @@
 .option-menu:hover {
   background: linear-gradient(60deg, rgb(28, 235, 250), rgb(157, 253, 127));
 }
+
+@media only screen and (max-width: 1440px) {
+  .department-menu {
+    width: 346px;
+    border-radius: 10px;
+  margin: -2rem ;
+  background-color: rgb(250, 252, 251);
+  margin-top: 2rem;
+  padding-top: 1rem;
+  box-shadow: 1px 13px 22px #333;
+  flex: 0 0 0%;
+  }
+  .menus-card{
+    width: 1240px;
+  } 
+  .session-menu{
+    width: 346px ;
+  }
+  .body-search-responsive{
+    width: 1600px;
+  }
+  .department-menu {
+    height: 1200px;
+  }
+}

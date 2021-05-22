@@ -39,7 +39,7 @@ export default function PlaceOrderScreen(props) {
         <div className="col-9">
           <ul id ='nav-card'>
             <li  className="col-4" style={{ display: "inline-block" }}>
-              <div  className="card card-body card-Oder-Screen">
+              <div  className="card card-body  card-Oder-Screen">
                 <h2>Shipping</h2>
                 <p>
                   <strong>Name:</strong> {cart.shippingAddress.fullName} <br />
@@ -49,8 +49,10 @@ export default function PlaceOrderScreen(props) {
                 </p>
               </div>
             </li>
-            <li className="col-4 " style={{ display: "inline-block" }}>
-              <div className="card card-body card-Oder-Screen">
+            <li className="col-4 "
+            //  style={{ display: "inline-block" }
+             >
+              <div className="card card-body  card-Oder-Screen">
                 <h2>Payment</h2>
                 <p>
                   <strong>Method:</strong> {cart.paymentMethod}
@@ -58,7 +60,7 @@ export default function PlaceOrderScreen(props) {
               </div>
             </li>
             <li  className="col-4" style={{ display: "inline-block" }}  >
-              <div className="card card-body card-Oder-Screen">
+              <div className="card card-body  card-Oder-Screen">
                 <h2>Order Items</h2>
                 <ul>
                   {cart.cartItems.map((item) => (
@@ -89,7 +91,7 @@ export default function PlaceOrderScreen(props) {
           </ul>
         </div>
         <div className="col-3">
-          <div className="card card-body card-Oder-Screen"  style={{ marginTop: "2rem" }}>
+          <div className="card nav-car card-Oder-Screen card-Oder-Screen-responsive "  style={{ marginTop: "2rem" }}>
           <h2>Order Summary</h2>
             <ul>
               <li className="statistical-content">
