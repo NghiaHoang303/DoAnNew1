@@ -39,7 +39,7 @@ export default function BookingHistoryScreen(props) {
                 <td>
                   <button
                     type="button"
-                    className="small"
+                    className="small btn-primary"
                     onClick={() => {
                       props.history.push(`/booking/${booking._id}`);
                     }}

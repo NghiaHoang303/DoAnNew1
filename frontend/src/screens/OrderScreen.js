@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import { deliverOrder, detailsOrder, payOrder } from '../actions/orderActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   ORDER_DELIVER_RESET,
   ORDER_PAY_RESET,
@@ -38,8 +40,17 @@ export default function OrderScreen(props) {
     return actions.order.capture();
   }
 
+  function confirmSuccess (){
+    if(order.isPaid === true){
+       notify();
+      
+    }else {
+      not_notify()
+    }
 
-
+  }
+  const notify = () => toast.success("Thanh toán thành công!");
+  const not_notify = () => toast.error("Thanh toán chưa thành công")
 
   const orderPay = useSelector((state) => state.orderPay);
   const {
@@ -136,10 +147,16 @@ export default function OrderScreen(props) {
                 <p>
                   <strong>Method:</strong> {order.paymentMethod}
                 </p>
+
                 {order.isPaid ? (
+                  <div >
+                    {confirmSuccess()}
+                   <ToastContainer />
                   <MessageBox variant="success">
                     Thanh toán tại {order.paidAt}
                   </MessageBox>
+                  </div>
+                   
                 ) : (
                   <MessageBox variant="danger">Chưa thanh toán</MessageBox>
                 )}

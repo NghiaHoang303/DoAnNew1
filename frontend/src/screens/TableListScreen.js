@@ -20,6 +20,8 @@ export default function TableListScreen(props) {
   const tableList = useSelector((state) => state.tableList);
   const { loading, error, tables, page, pages } = tableList;
 
+  console.log('aaaa ', tableList)
+
   const tableCreate = useSelector((state) => state.tableCreate);
   const {
     loading: loadingCreate,

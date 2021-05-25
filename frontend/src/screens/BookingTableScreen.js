@@ -10,8 +10,11 @@ export default function BookingTableScreen(props) {
 
   const { userInfo } = userSignin;
   const cartTable = useSelector((state) => state.cartTable);
+  console.log('carttable : ' , cartTable);
   const { bookingTable } = cartTable;
-
+const bookingRouter = useSelector((state) => state.bookingRouter)
+console.log('booking router', bookingRouter);
+  
   if (!userInfo) {
     props.history.push('/signin');
   }
@@ -21,6 +24,9 @@ export default function BookingTableScreen(props) {
   const [hour, setHour] = useState(bookingTable.hour);
   const [numberPlace, setNumberPlace] = useState(bookingTable.numberPlace);
   const [description, setDescription] = useState(bookingTable.description);
+  console.log('date : ',date);
+  console.log('bookingTable :', bookingTable );
+
 
   const checkName = (fullName) => {
     return validName.test(fullName);
@@ -31,7 +37,7 @@ const checkPhoneNumber = (phoneNumber) => {
 const checkDay = (date) => {
   if(date === ""){
     return "";
-  }
+  } 
 const splitTime = date.split('-');
       const year = parseInt(splitTime[0]);
       const month = parseInt(splitTime[1]);

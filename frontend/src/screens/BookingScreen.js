@@ -64,6 +64,8 @@ export default function BookingScreen(props) {
     }
   }, [dispatch, bookingId, sdkReady, successPay, successDeliver, booking]);
 
+
+  console.log( 'ffff' ,booking)
   const successPaymentHandler = (paymentResult) => {
     dispatch(payBooking(booking, paymentResult));
   };
@@ -100,10 +102,18 @@ export default function BookingScreen(props) {
                 <p>
                   <strong>Phương pháp:</strong> {booking.paymentMethod}
                 </p>
-                {booking.isPaid ? (
-                  <MessageBox variant="success">
-                    Thanh toán tại{booking.paidAt}
-                  </MessageBox>
+                {booking.isPaid === true ? (
+                    <div>
+                      <div className = 'alert'>
+                      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                      Thanh toán thành công
+
+                      </div>
+                        <MessageBox variant="success">
+                          Thanh toán tại{booking.paidAt}
+                        
+                        </MessageBox>
+                    </div>
                 ) : (
                   <MessageBox variant="danger">Chưa trả tiền</MessageBox>
                 )}

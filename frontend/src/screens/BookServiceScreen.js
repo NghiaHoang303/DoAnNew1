@@ -26,6 +26,9 @@ export default function BookServiceScreen(props) {
   const dispatch = useDispatch();
   const tableList = useSelector((state) => state.tableList);
   const { loading, error, tables, page, pages } = tableList;
+  console.log('dddd', tableList)
+
+  
 
   const tableCategoryList = useSelector((state) => state.tableCategoryList);
   const {
@@ -56,12 +59,12 @@ export default function BookServiceScreen(props) {
     const sortBooking = filter.booking || booking;
     const filterMin = filter.min ? filter.min : filter.min === 0 ? 0 : min;
     const filterMax = filter.max ? filter.max : filter.max === 0 ? 0 : max;
-    return `/search/category/${filterCategory}/name/${filterName}/min/${filterMin}/max/${filterMax}/rating/${filterRating}/booking/${sortBooking}/pageNumber/${filterPage}`;
+    return `/BookServiceScreen/category/${filterCategory}/pageNumber/${filterPage}`;
   };
+  
   const dispatchBookTable = useDispatch();
-  // const tableList = useSelector((state) => state.tableList);
-  // const { loading, error, tables } = tableList;
 
+ 
   const userTopSellersList = useSelector((state) => state.userTopSellersList);
   useEffect(() => {
     dispatchBookTable(listTables({}));
@@ -124,7 +127,7 @@ export default function BookServiceScreen(props) {
               <Link
                 className={x + 1 === page ? 'active' : ''}
                 key={x + 1}
-                to={`/BookServiceScreen/tablelist/pageNumber/${x + 1}`}
+                to={getFilterUrl({page : x + 1})}
               >
                 {x + 1}
               </Link>
