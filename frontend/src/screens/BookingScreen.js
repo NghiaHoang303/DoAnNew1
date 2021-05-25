@@ -77,48 +77,41 @@ export default function BookingScreen(props) {
     <MessageBox variant="danger">{error}</MessageBox>
   ) : (
     <div>
-      <h1>Bill Booking{booking._id}</h1>
+      <h1>Hóa đơn{booking._id}</h1>
       <div className="row top">
         <div className="col-2">
           <ul>
             <li>
               <div className="card card-body">
-                <h2>Booking</h2>
+                <h2>Đặt trước</h2>
                 <p>
-                  <strong>Name:</strong> {booking.bookingTable.fullName} <br />
-                  <strong>Phone Number: </strong> {booking.bookingTable.phoneNumber} <br />
-                  <strong>Hour: </strong> {booking.bookingTable.hour} <br />
-                  <strong>Date: </strong> {booking.bookingTable.date} <br />
-                  <strong>Number Place: </strong> {booking.bookingTable.numberPlace} <br />
-                  <strong>Description: </strong> {booking.bookingTable.description} <br />
+                  <strong>Tên:</strong> {booking.bookingTable.fullName} <br />
+                  <strong>Số điện thoại: </strong> {booking.bookingTable.phoneNumber} <br />
+                  <strong>Giờ: </strong> {booking.bookingTable.hour} <br />
+                  <strong>Ngày: </strong> {booking.bookingTable.date} <br />
+                  <strong>Địa Chỉ: </strong> {booking.bookingTable.numberPlace} <br />
+                  <strong>Mô tả: </strong> {booking.bookingTable.description} <br />
                 </p>
-                {booking.isDelivered ? (
-                  <MessageBox variant="success">
-                    Delivered at {booking.deliveredAt}
-                  </MessageBox>
-                ) : (
-                  <MessageBox variant="danger">Not Delivered</MessageBox>
-                )}
               </div>
             </li>
             <li>
               <div className="card card-body">
-                <h2>Payment</h2>
+                <h2>Thanh toán</h2>
                 <p>
-                  <strong>Method:</strong> {booking.paymentMethod}
+                  <strong>Phương pháp:</strong> {booking.paymentMethod}
                 </p>
                 {booking.isPaid ? (
                   <MessageBox variant="success">
-                    Paid at {booking.paidAt}
+                    Thanh toán tại{booking.paidAt}
                   </MessageBox>
                 ) : (
-                  <MessageBox variant="danger">Not Paid</MessageBox>
+                  <MessageBox variant="danger">Chưa trả tiền</MessageBox>
                 )}
               </div>
             </li>
             <li>
               <div className="card card-body">
-                <h2>Booking Items</h2>
+                <h2>Đặt trước các mặt hàng</h2>
                 <ul>
                   {booking.bookingItems.map((item) => (
                     <li key={item.table}>
@@ -151,24 +144,24 @@ export default function BookingScreen(props) {
           <div className="card card-body">
             <ul>
               <li>
-                <h2>Table reservation Payment</h2>
+                <h2>Đặt bàn Thanh toán</h2>
               </li>
               <li>
                 <div className="row">
-                  <div>Items</div>
+                  <div>Mặt hàng</div>
                   <div>${booking.itemsPrice.toFixed(2)}</div>
                 </div>
               </li>
               <li>
                 <div className="row">
-                  <div>Tax</div>
+                  <div>Thuế</div>
                   <div>${booking.taxPrice.toFixed(2)}</div>
                 </div>
               </li>
               <li>
                 <div className="row">
                   <div>
-                    <strong> Booking Total</strong>
+                    <strong> Tổng số đặt trước</strong>
                   </div>
                   <div>
                     <strong>${booking.totalPrice.toFixed(2)}</strong>
@@ -205,7 +198,7 @@ export default function BookingScreen(props) {
                     className="primary block"
                     onClick={deliverHandler}
                   >
-                    Deliver Booking
+                    Cung cấp Đặt chỗ
                   </button>
                 </li>
               )}

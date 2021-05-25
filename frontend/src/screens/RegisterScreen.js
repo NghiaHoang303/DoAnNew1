@@ -7,13 +7,10 @@ import MessageBox from "../components/MessageBox";
 import "../scss/signIn.css";
 import restaurant_img4 from "../scss/images/restaurant4.jpg";
 import anime from "animejs/lib/anime.es.js";
+import {validName,validEmail, validPassword} from '../testregex.js';
 
 export default function RegisterScreen(props) {
-  var textWrapper = document.querySelector(".ml6 .letters");
-  // textWrapper.innerHTML = textWrapper.textContent.replace(
-  //   /\S/g,
-  //   "<span className='letter'>$&</span>"
-  // );
+  var textWrapper = document.querySelector(".ml6 .letters");;
 
   anime
     .timeline({ loop: true })
@@ -37,6 +34,7 @@ export default function RegisterScreen(props) {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+
   const redirect = props.location.search
     ? props.location.search.split("=")[1]
     : "/";
@@ -45,14 +43,28 @@ export default function RegisterScreen(props) {
   const { userInfo, loading, error } = userRegister;
 
   const dispatch = useDispatch();
+  
+  
+
   const submitHandler = (e) => {
     e.preventDefault();
-    if (password !== confirmPassword) {
-      alert("Password and confirm password are not match");
-    } else {
-      dispatch(register(name, email, password));
-    }
+    if (password === confirmPassword && checkName(name) === true && checkPassWord(password) === true && checkEmail(email) === true) {
+        dispatch(register(name, email, password));
+    } 
   };
+  const checkName = (name) => {
+    return validName.test(name);
+  } 
+  const checkPassWord = (password) => {
+    return validPassword.test(password);
+  }
+  const checkEmail = (email) => {
+    return validEmail.test(email);
+  }
+
+  console.log(name)
+  console.log(email)
+  console.log(password)
 
   useEffect(() => {
     if (userInfo) {
@@ -69,13 +81,13 @@ export default function RegisterScreen(props) {
         <div>
           <label />
           <div style={{ textAlign: "center", marginBottom: "5rem" }}>
-            Already have an account?{" "}
-            <Link to={`/signin?redirect=${redirect}`}>Sign-In</Link>
+          Bạn có sẵn sàng để tạo tài khoản chưa?{" "}
+            <Link to={`/signin?redirect=${redirect}`}>Đăng nhập</Link>
           </div>
           <div className="intro-registry" style={{ marginBottom: "5rem" }}>
             <h1 class="ml6">
               <span class="text-wrapper">
-                <span className="letters">Wellcom to VietFood</span>
+                <span className="letters">Chào mừng đến với VietFood</span>
                 <span></span>
               </span>
             </h1>
@@ -91,12 +103,11 @@ export default function RegisterScreen(props) {
       <div className="col form-card-signIn " style={{ marginRight: "8rem" }}>
         <form className="form " onSubmit={submitHandler}>
           <div style={{ width: "505px" }}>
-            <h1>Create Account</h1>
+            <h1>Tạo tài khoản</h1>
           </div>
           {loading && <LoadingBox></LoadingBox>}
           {error && <MessageBox variant="danger">{error}</MessageBox>}
           <div>
-            <label htmlFor="name">Name</label>
             <input
               type="text"
               id="name"
@@ -104,9 +115,14 @@ export default function RegisterScreen(props) {
               required
               onChange={(e) => setName(e.target.value)}
             ></input>
+            
           </div>
+          {!checkName(name) && 
+             <div className = 'message small ' style = {{width:'320px'}}  >
+             Tên bắt đầu bằng một chữ cái in hoa và tối đa bốn chữ cái
+             </div>
+            }
           <div>
-            <label htmlFor="email">Email address</label>
             <input
               type="email"
               id="email"
@@ -115,8 +131,8 @@ export default function RegisterScreen(props) {
               onChange={(e) => setEmail(e.target.value)}
             ></input>
           </div>
+         <div>{!checkEmail(email) && <div className = 'message small w-100'>Ví dụ: tu@gmail.com phải có @</div>}</div> 
           <div>
-            <label htmlFor="password">Password</label>
             <input
               type="password"
               id="password"
@@ -125,8 +141,8 @@ export default function RegisterScreen(props) {
               onChange={(e) => setPassword(e.target.value)}
             ></input>
           </div>
+          <div>{!checkPassWord(password) && <div className = 'message small w-100'>Mật khẩu phải chứa cả số và chữ cái. Tối thiểu 6 ký tự</div>}</div> 
           <div>
-            <label htmlFor="confirmPassword">Confirm Password</label>
             <input
               type="password"
               id="confirmPassword"
@@ -135,6 +151,7 @@ export default function RegisterScreen(props) {
               onChange={(e) => setConfirmPassword(e.target.value)}
             ></input>
           </div>
+          <div>{password !== confirmPassword && <div className = 'message small w-100'>mật khẩu không khớp</div>}</div> 
           <div>
             <label />
             <button
@@ -142,7 +159,7 @@ export default function RegisterScreen(props) {
               type="submit"
               style={{ fontSize: "20px" }}
             >
-              Register
+              Đăng ký
             </button>
           </div>
         </form>

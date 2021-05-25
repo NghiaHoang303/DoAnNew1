@@ -56,7 +56,7 @@ export default function ProductScreen(props) {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <div>
-          <Link to="/">Back to result</Link>
+          <Link to="/">Trở về trang chủ</Link>
           <div className="row top">
             <div className="col-4">
               <img
@@ -76,9 +76,9 @@ export default function ProductScreen(props) {
                     numReviews={product.numReviews}
                   ></Rating>
                 </li>
-                <li className="description-product">Pirce : ${product.price}</li>
+                <li className="description-product">Giá bán : ${product.price}</li>
                 <li>
-                  Description:
+                Mô tả
                   <p>{product.description}</p>
                 </li>
               </ul>
@@ -87,7 +87,7 @@ export default function ProductScreen(props) {
               <div className="card card-body card-product-seller">
                 <ul>
                   <li>
-                    Seller{' '}
+                  Người bán{' '}
                     <h2>
                       <Link to={`/seller/${product.seller._id}`}>
                         {product.seller.seller.name}
@@ -100,18 +100,18 @@ export default function ProductScreen(props) {
                   </li>
                   <li>
                     <div className="row">
-                      <div className='col-5'>Price</div>
+                      <div className='col-5'>Giá bán</div>
                       <div className="price col-3">${product.price}</div>
                     </div>
                   </li>
                   <li>
                     <div className="row">
-                      <div className ='col-5'>Status</div>
+                      <div className ='col-5'>Trạng thái</div>
                       <div className = 'col-3'>
                         {product.countInStock > 0 ? (
-                          <span className="success">In Stock</span>
+                          <span className="success">Trong kho</span>
                         ) : (
-                          <span className="danger">Unavailable</span>
+                          <span className="danger">Không có sẵn</span>
                         )}
                       </div>
                     </div>
@@ -120,7 +120,7 @@ export default function ProductScreen(props) {
                     <>
                       <li>
                         <div className="row">
-                          <div className ='col-5'>Qty</div>
+                          <div className ='col-5'>Số lượng</div>
                           <div className = 'col-3'>
                             <select
                               value={qty}
@@ -148,7 +148,7 @@ export default function ProductScreen(props) {
                             marginLeft: "-1rem",
                           }}
                         >
-                          Add to Cart
+                          Thêm vào giỏ hàng
                         </button>
                       </li>
                     </>
@@ -158,9 +158,9 @@ export default function ProductScreen(props) {
             </div>
           </div>
           <div className='reviews-client'>
-            <h2 id="reviews">Reviews</h2>
+            <h2 id="reviews">Nhận xét</h2>
             {product.reviews.length === 0 && (
-              <MessageBox>There is no review</MessageBox>
+              <MessageBox>Không có đánh giá</MessageBox>
             )}
             <ul>
               {product.reviews.map((review) => (
@@ -175,17 +175,17 @@ export default function ProductScreen(props) {
                 {userInfo ? (
                   <form className="form" onSubmit={submitHandler}>
                     <div>
-                      <h2>Write a customer review</h2>
+                      <h2>Viết nhận xét của khách hàng</h2>
                     </div>
                     <div>
-                      <label htmlFor="rating">Rating</label>
+                      <label htmlFor="rating">Xếp hạng</label>
                       <select
                        className="rating-of-client"
                         id="rating-of-client"
                         value={rating}
                         onChange={(e) => setRating(e.target.value)}
                       >
-                        <option value="">Select...</option>
+                        <option value="">Lựa chọn...</option>
                         <option value="1">1- Poor</option>
                         <option value="2">2- Fair</option>
                         <option value="3">3- Good</option>
@@ -194,7 +194,7 @@ export default function ProductScreen(props) {
                       </select>
                     </div>
                     <div>
-                      <label htmlFor="comment">Comment</label>
+                      <label htmlFor="comment">Bình luận</label>
                       <textarea
                         id="comment"
                         value={comment}
@@ -204,7 +204,7 @@ export default function ProductScreen(props) {
                     <div>
                       <label />
                       <button className="primary" type="submit">
-                        Submit
+                      Gửi đi
                       </button>
                     </div>
                     <div>
@@ -218,7 +218,7 @@ export default function ProductScreen(props) {
                   </form>
                 ) : (
                   <MessageBox>
-                    Please <Link to="/signin">Sign In</Link> to write a review
+                    Xin vui lòng <Link to="/signin">Đăng nhập</Link>để  viết một bài đánh giá
                   </MessageBox>
                 )}
               </li>

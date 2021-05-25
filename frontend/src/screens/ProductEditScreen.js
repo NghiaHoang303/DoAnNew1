@@ -91,7 +91,7 @@ export default function ProductEditScreen(props) {
       <form className="form form-create-product background-create-product" 
       onSubmit={submitHandler}>
         <div>
-          <h1>Edit Product {productId}</h1>
+          <h1>Chỉnh sửa sản phẩm {productId}</h1>
         </div>
         {loadingUpdate && <LoadingBox></LoadingBox>}
         {errorUpdate && <MessageBox variant="danger">{errorUpdate}</MessageBox>}
@@ -102,7 +102,7 @@ export default function ProductEditScreen(props) {
         ) : (
           <>
             <div className='input-create'>
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">Tên</label>
               <input
                 id="name"
                 type="text"
@@ -112,7 +112,7 @@ export default function ProductEditScreen(props) {
               ></input>
             </div>
             <div className="input-create">
-              <label htmlFor="price">Price</label>
+              <label htmlFor="price">Giá bán</label>
               <input
                 id="price"
                 type="text"
@@ -122,7 +122,7 @@ export default function ProductEditScreen(props) {
               ></input>
             </div>
             <div className="input-create">
-              <label htmlFor="image">Image</label>
+              <label htmlFor="image">Hình ảnh</label>
               <input
                 id="image"
                 type="text"
@@ -132,7 +132,7 @@ export default function ProductEditScreen(props) {
               ></input>
             </div>
             <div className="input-create">
-              <label htmlFor="imageFile">Image File</label>
+              <label htmlFor="imageFile">Tệp hình ảnh</label>
               <input
                 type="file"
                 id="imageFile"
@@ -155,7 +155,7 @@ export default function ProductEditScreen(props) {
               ></input>
             </div>
             <div className="input-create">
-              <label htmlFor="brand">Brand</label>
+              <label htmlFor="brand">Nhãn hiệu</label>
               <input
                 id="brand"
                 type="text"
@@ -165,7 +165,7 @@ export default function ProductEditScreen(props) {
               ></input>
             </div>
             <div className="input-create">
-              <label htmlFor="countInStock">Count In Stock</label>
+              <label htmlFor="countInStock">Số lượng trong kho</label>
               <input
                 id="countInStock"
                 type="text"
@@ -175,7 +175,7 @@ export default function ProductEditScreen(props) {
               ></input>
             </div>
             <div className="input-create">
-              <label htmlFor="description">Description</label>
+              <label htmlFor="description">Mô tả</label>
               <textarea
                 id="description"
                 rows="3"
@@ -187,8 +187,8 @@ export default function ProductEditScreen(props) {
             </div>
             <div className="input-create">
               <label></label>
-              <button className="primary" type="submit">
-                Update
+              <button className="btn-success" type="submit">
+              Cập nhật
               </button>
             </div>
           </>

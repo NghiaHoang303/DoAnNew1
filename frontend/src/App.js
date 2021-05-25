@@ -41,7 +41,6 @@ import TableListScreen from './screens/TableListScreen';
 import TableScreen from './screens/TableScreen';
 import TableEditScreen from './screens/TableEditScreen';
 import SellerTableScreen from './screens/SellerTableScreen';
-import SearchTableScreen from './screens/SearchTableScreen';
 import { listTableCategories } from './actions/tableActions';
 import DashboardTableScreen from './screens/DashboardTableScreen';
 
@@ -93,7 +92,7 @@ function App() {
     <BrowserRouter>
       <div className="grid-container">
         <header className="row-home"  style={{ height: "75px" }}>
-          <div className="btn-header " style={{ width: "30%", float: "left" }}>
+          <div className="btn-header " style={{ width: "24%", float: "left" }}>
             <button
               type="button"
               className="open-sidebar"
@@ -102,7 +101,7 @@ function App() {
               <i className="fa fa-bars"></i>
             </button>
             <Link className="brand" to="/">
-             Restaurant
+            VietFOOD N&T
             </Link>
           </div>
           <div
@@ -123,7 +122,7 @@ function App() {
             >
             <Link to="/cart">
             <i className="fas fa-shopping-cart mr-3"></i>
-              Cart
+            cart
               {cartItems.length > 0 && (
                 <span className="badge">{cartItems.length}</span>
               )}
@@ -134,7 +133,7 @@ function App() {
 
             <Link to="/cartTable">
             <i class="fas fa-gift"></i>
-              Table
+            Bàn
               {cartTableItems.length > 0 && (
                 <span className="badge">{cartTableItems.length}</span>
               )}
@@ -154,46 +153,52 @@ function App() {
                   <li>
                     <Link to="/profile">
                     <i class="far fa-user-circle mr-3"></i>
-                      User Profile</Link>
+                    Thông tin cá nhân</Link>
                   </li>
                   <li>
                     <Link to="/orderhistory">
                     <i className="fas fa-history mr-3"></i>
                       
-                      Order History</Link>
+                    lịch sử đơn hàng</Link>
+                  </li>
+                  <li>
+                    <Link to="/bookinghistory">
+                    <i className="fas fa-history mr-3"></i>
+                      
+                    lịch sử dặt bàn</Link>
                   </li>
                   <li>
                     <Link to="#signout" onClick={signoutHandler}>
                     <i class="fas fa-sign-out-alt mr-3"></i>
 
-                      Sign Out
+                    Đăng xuất
                     </Link>
                   </li>
                 </ul>
               </div>
             ) : (
-              <Link to="/signin" className="navbar-option">Sign In</Link>
+              <Link to="/signin" className="navbar-option">Đăng nhập</Link>
             )}
             {userInfo && userInfo.isSeller && (
               <div className="dropdown">
                 <Link to="#admin">
-                  Seller <i className="fa fa-caret-down"></i>
+                Người bán <i className="fa fa-caret-down"></i>
                 </Link>
                 <ul className="dropdown-content">
                   <li>
-                    <Link to="/productlist/seller">Products</Link>
+                    <Link to="/productlist/seller">Sản phẩm</Link>
                   </li>
                   <li>
-                    <Link to="/orderlist/seller">Orders</Link>
+                    <Link to="/orderlist/seller">Đơn hàng</Link>
                   </li>
                   <li>
-                    <Link to="/tablelist/seller">Tables</Link>
+                    <Link to="/tablelist/seller">Bàn</Link>
                   </li>
                   <li>
-                    <Link to="/bookinglist/seller">Bookings</Link>
+                    <Link to="/bookinglist/seller">Đặt chỗ</Link>
                   </li>
                   <li>
-                     <Link to="/support">Support</Link>
+                     <Link to="/support">Hỗ trợ</Link>
                   </li>
                 </ul>
               </div>
@@ -204,39 +209,40 @@ function App() {
               >
                 <Link to="#admin">
                 <i className="fas fa-users-cog mr-3"></i>
-                  Admin <i className="fa fa-caret-down"></i>
+                Admin <i className="fa fa-caret-down"></i>
                 </Link>
                 <ul className="dropdown-content text-white" style ={{width :' 300px '}}>
                   <li>
                     <i className="fas fa-chart-line mr-3  "></i>
-                    <Link to="/dashboard">Dashboard</Link>
+                    <Link to="/dashboard">Biểu đồ sản phẩm</Link>
+                  </li>
+                  <li>
+                  <i className="fas fa-chart-line mr-3  "></i>
+                    <Link to="/dashboardTable">Biểu đồ đặt bàn</Link>
                   </li>
                   <li>
                     <i className="fas fa-cookie-bite mr-3 "></i>
-                    <Link to="/productlist">Products</Link>
+                    <Link to="/productlist">Quản lý sản phẩm</Link>
+                  </li>
+                  <li>
+                    <i class="fas fa-table mr-3"></i>
+                    <Link to="/tablelist">Quản lý bàn</Link>
                   </li>
                   <li>
                      <i className="fas fa-dollar-sign mr-3"></i>
-                     <Link to="/orderlist">Orders</Link>
-                  </li>
+                     <Link to="/orderlist">Quản lý đơn hàng</Link>
+                  </li> 
                   <li>
-
-                    <Link to="/dashboardTable">DashboardTable</Link>
-                  </li>
-                  <li>
-                    <i class="fas fa-gift"></i>
-                    <Link to="/tablelist">Tables</Link>
-                  </li>
-                  <li>
-                    <Link to="/bookinglist">Bookings</Link>
+                     <i class="fas fa-table mr-3"></i>
+                    <Link to="/bookinglist">Quản lý Đặt chỗ</Link>
                   </li>
                   <li>
                   <i className="fas fa-user-friends mr-3"></i>
-                    <Link to="/userlist">Users</Link>
+                    <Link to="/userlist">Quản lý người dùng</Link>
                   </li>
                   <li>
                   <i className="far fa-comments mr-3"></i>
-                    <Link to="/support">Support</Link>
+                    <Link to="/support">Hỗ trợ</Link>
                   </li>
                 </ul>
               </div>
@@ -280,7 +286,7 @@ function App() {
                 onClick={() => setSidebarIsOpen(false)}
               >
                 {" "}
-                about us
+                Về chúng tôi
               </Link>
             </li>
           </ul>
@@ -417,10 +423,7 @@ function App() {
           <div>
             <div>
             {userInfo && !userInfo.isAdmin && <ChatBox userInfo={userInfo} />}
-            <ChatBox userInfo={userInfo}></ChatBox>
-            {/* <div style={{ textAlign: "center", marginTop: "-5rem" }}>
-                <img className="img-footer" src={logo}></img>
-            </div> */}
+          
             <div className="row">
                 <div className="col-4" style = {{ textAlign :''}}>
                   <h2>DIAMOND PLACE</h2>
@@ -454,7 +457,7 @@ function App() {
             </div>
           </div>
           
-          <div>All right reserved</div>{' '}
+          <div>Tất cả các quyền</div>{' '}
         </footer>
       </div>
     </BrowserRouter>

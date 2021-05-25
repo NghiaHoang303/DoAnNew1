@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { saveShippingAddress } from '../actions/cartActions';
 import CheckoutSteps from '../components/CheckoutSteps';
 import "../scss/shippingAddress.css";
+import {validName} from '../testregex.js';
+import MessageBox from '../components/MessageBox';
 
 export default function ShippingAddressScreen(props) {
   const userSignin = useSelector((state) => state.userSignin);
@@ -24,6 +26,9 @@ export default function ShippingAddressScreen(props) {
   const [postalCode, setPostalCode] = useState(shippingAddress.postalCode);
   const [country, setCountry] = useState(shippingAddress.country);
   const dispatch = useDispatch();
+  const checkName = (fullName) => {
+    return validName.test(fullName);
+}
   const submitHandler = (e) => {
     e.preventDefault();
     const newLat = addressMap ? addressMap.lat : lat;
@@ -50,7 +55,10 @@ export default function ShippingAddressScreen(props) {
           lng: newLng,
         })
       );
-      props.history.push('/payment');
+      if(checkName(fullName) === true){
+        props.history.push('/payment');
+      }
+     
     }
   };
   const chooseOnMap = () => {
@@ -72,10 +80,10 @@ export default function ShippingAddressScreen(props) {
       <CheckoutSteps step1 step2></CheckoutSteps>
       <form className="form form-shipping" onSubmit={submitHandler}>
         <div>
-          <h1>Shipping Address</h1>
+          <h1>Địa chỉ giao hàng</h1>
         </div>
         <div>
-          <label htmlFor="fullName">Full Name</label>
+          <label htmlFor="fullName">Họ và tên</label>
           <input
             type="text"
             id="fullName"
@@ -85,8 +93,12 @@ export default function ShippingAddressScreen(props) {
             required
           ></input>
         </div>
+        {!checkName(fullName) && 
+          <div className = 'message' >Tên bắt đầu bằng một chữ cái in hoa và tối đa bốn chữ cái
+          </div>
+      }
         <div>
-          <label htmlFor="address">Address</label>
+          <label htmlFor="address">Địa chỉ</label>
           <input
             type="text"
             id="address"
@@ -97,7 +109,7 @@ export default function ShippingAddressScreen(props) {
           ></input>
         </div>
         <div>
-          <label htmlFor="city">City</label>
+          <label htmlFor="city">Thành phố</label>
           <input
             type="text"
             id="city"
@@ -108,7 +120,7 @@ export default function ShippingAddressScreen(props) {
           ></input>
         </div>
         <div>
-          <label htmlFor="postalCode">Postal Code</label>
+          <label htmlFor="postalCode">Mã bưu điện</label>
           <input
             type="text"
             id="postalCode"
@@ -119,7 +131,7 @@ export default function ShippingAddressScreen(props) {
           ></input>
         </div>
         <div>
-          <label htmlFor="country">Country</label>
+          <label htmlFor="country">Quốc gia</label>
           <input
             type="text"
             id="country"
@@ -130,16 +142,16 @@ export default function ShippingAddressScreen(props) {
           ></input>
         </div>
         <div>
-          <label htmlFor="chooseOnMap">Location</label>
+          <label htmlFor="chooseOnMap">Vị trí</label>
           <button type="button" onClick={chooseOnMap}>
-            Choose On Map
+          Chọn trên bản đồ
           </button>
         </div>
         <div>
           <label />
           <button className="primary" type="submit" 
             style={{ marginBottom: "4rem" }}>
-            Continue
+            Tiếp tục
           </button>
         </div>
       </form>

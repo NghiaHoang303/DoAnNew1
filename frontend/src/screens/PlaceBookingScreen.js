@@ -6,6 +6,7 @@ import CheckoutSteps from '../components/CheckoutTableSteps';
 import { BOOKING_CREATE_RESET } from '../constants/bookingConstants';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
+import "../scss/cardOderScreen.css";   
 
 
 export default function PlaceBookingScreen(props) {
@@ -38,47 +39,48 @@ export default function PlaceBookingScreen(props) {
         <div className="col-2">
           <ul>
             <li>
-              <div className="card card-body">
-                <h2>Booking Table</h2>
+              <div className="card card-body card-Oder-Screen"  style ={{width :'80%'}}>
+                <h2>Bàn đặt chỗ</h2>
                 <p>
-                <strong>Name:</strong> {cartTable.bookingTable.fullName} <br />
-                  <strong>Phone Number: </strong> {cartTable.bookingTable.phoneNumber} <br />
-                  <strong>Hour: </strong> {cartTable.bookingTable.hour} <br />
-                  <strong>Date: </strong> {cartTable.bookingTable.date} <br />
-                  <strong>Number Place: </strong> {cartTable.bookingTable.numberPlace} <br />
-                  <strong>Description: </strong> {cartTable.bookingTable.description} <br />
+                <strong>Tên:</strong> {cartTable.bookingTable.fullName} <br />
+                  <strong>Số điện thoại: </strong> {cartTable.bookingTable.phoneNumber} <br />
+                  <strong>Giờ: </strong> {cartTable.bookingTable.hour} <br />
+                  <strong>Ngày: </strong> {cartTable.bookingTable.date} <br />
+                  <strong>Địa chỉ: </strong> {cartTable.bookingTable.numberPlace} <br />
+                  <strong>Mô tả: </strong> {cartTable.bookingTable.description} <br />
                 </p>
               </div>
             </li>
             <li>
-              <div className="card card-body">
-                <h2>Payment</h2>
+              <div className="card card-body card-Oder-Screen"  style ={{width :'80%'}}>
+                <h2>Thanh toán</h2>
                 <p>
-                  <strong>Method:</strong> {cartTable.paymentMethod}
+                  <strong>Phương pháp:</strong> {cartTable.paymentMethod}
                 </p>
               </div>
             </li>
             <li>
-              <div className="card card-body">
-                <h2>Booking Items</h2>
+              <div className="card card-body card-Oder-Screen"  style ={{width :'80%'}}>
+                <h2>Đặt trước các mặt hàng</h2>
                 <ul>
                   {cartTable.cartTableItems.map((item) => (
                     <li key={item.table}>
                       <div className="row">
-                        <div>
+                        <div className = 'col'>
                           <img
                             src={item.image}
                             alt={item.name}
                             className="small"
+                            style = {{width :'100px'}}
                           ></img>
                         </div>
-                        <div className="min-30">
+                        <div className="min-30 col" >
                           <Link to={`/table/${item.table}`}>
                             {item.name}
                           </Link>
                         </div>
 
-                        <div>
+                        <div className='col'>
                           {item.qty} x ${item.price} = ${item.qty * item.price}
                         </div>
                       </div>
@@ -90,27 +92,27 @@ export default function PlaceBookingScreen(props) {
           </ul>
         </div>
         <div className="col-1">
-          <div className="card card-body">
+          <div className="card card-body card-Oder-Screen"  style ={{width :'80%'}}>
             <ul>
-              <li>
-                <h2>Table Reservation Payment</h2>
-              </li>
+
+                <h2><b>Thanh toán đặt bàn</b></h2>
+              
               <li>
                 <div className="row">
-                  <div>Items</div>
+                  <div>Mặt hàng</div>
                   <div>${cartTable.itemsPrice.toFixed(2)}</div>
                 </div>
               </li>
               <li>
                 <div className="row">
-                  <div>Tax</div>
+                  <div>Thuế</div>
                   <div>${cartTable.taxPrice.toFixed(2)}</div>
                 </div>
               </li>
               <li>
                 <div className="row">
                   <div>
-                    <strong> Booking Total</strong>
+                    <strong> Tổng số đặt trước</strong>
                   </div>
                   <div>
                     <strong>${cartTable.totalPrice.toFixed(2)}</strong>
@@ -124,7 +126,7 @@ export default function PlaceBookingScreen(props) {
                   className="primary block"
                   disabled={cartTable.cartTableItems.length === 0}
                 >
-                  Place Booking
+                  Đặt chỗ
                 </button>
               </li>
               {loading && <LoadingBox></LoadingBox>}

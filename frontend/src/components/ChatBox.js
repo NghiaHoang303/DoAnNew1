@@ -39,6 +39,9 @@ export default function ChatBox(props) {
         setMessages([...messages, { body: data.body, name: data.name }]);
       });
     }
+    else {
+      
+    }
   }, [messages, isOpen, socket]);
 
   const supportHandler = () => {

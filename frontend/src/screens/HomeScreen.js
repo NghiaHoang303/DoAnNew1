@@ -16,7 +16,11 @@ import { CalendarComponent } from "@syncfusion/ej2-react-calendars";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 // import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
+import thitbo from '../scss/images/Delivery.png'
+import drink from '../scss/images/nuocuong.png'
+import fastFood from '../scss/images/fastfood.png'
 import MapScreen from "./MapScreen";
+import monan from '../scss/images/monan.png'
 import $ from "jquery";
 import {
   InfoWindow,
@@ -29,6 +33,10 @@ import AOS from "aos";
 import logo_v2 from "../scss/images/logo_v2.png";
 import logo_video from "../scss/images/logo_video.mp4";
 import Geocode from "react-geocode";
+import anh1 from '../scss/images/drink-1.jpg'
+import anh2 from '../scss/images/coffe1.jpg'
+import anh3 from '../scss/images/pizza.jpg'
+import anh4 from '../scss/images/monAnTruyenThongVietNam_3.jpg'
 
 Geocode.setApiKey("AIzaSyDVGjDTneZNSjh91mqVpqVmEshIYnxZhnI");
 
@@ -193,13 +201,13 @@ export default function HomeScreen() {
               ></img> */}
             </div>
             <div className=" text-left-homeScreen " data-text="text-create">
-              <p className="check-text tracking-in-expand-fwd ">CHECK</p>
-              <p className="second-text tracking-in-expand-fwd ">THE BEST</p>
-              <p className="second-text tracking-in-expand-fwd ">DISH</p>
+              <p className="check-text tracking-in-expand-fwd ">XEM</p>
+              <p className="second-text tracking-in-expand-fwd ">MÓN ĂN</p>
+              <p className="second-text tracking-in-expand-fwd ">NGON NHẤT</p>
             </div>{" "}
             <div className="text-left-homeScreen-bottom ">
-              <p>or</p>
-              <p>OUR WINE SELECTION </p> <p>MEAT AND FISH OF DAY</p>
+              <p>hoặc là</p>
+              <p>Lựa chọn thức uống </p> <p> của chúng tôi</p>
               <img
                 src="http://www.nicdarkthemes.com/themes/restaurant/wp/demo/hamburger/wp-content/uploads/sites/7/revslider/home-6/divider.png"
                 alt="Girl in a jacket"
@@ -225,20 +233,22 @@ export default function HomeScreen() {
                 className=" "
                 style={{ float: "left" }}
               >
-                <a  className ='img-right img-contact2 ' href = 'http://localhost:32775/product/60a60f0667996e38598ff3f5'>
+                <a  className ='img-right img-contact2 ' href = '/product/60ab74424bb4e134533690e5'>
                 <img
                   style={{ marginRight: "-10px" }}
                   className="img-beauty1 show-on-scroll img-dish-header  img-fluid"
                   src="https://cdn2.civitatis.com/vietnam/hoi-an/galeria/plato-tradicional-vietnamita.jpg"
+                  href=''
                 ></img>
                 </a>
               </div>
               <div className="img-responsive">
-               <a className= 'img-right img-contact2  ' href = 'http://localhost:32775/product/60a60ceadd7752112d1ece31'>
+               <a className= 'img-right img-contact2  ' href = '/product/60ab766a4bb4e134533690e8'>
                <img
                   className="img-beauty1 show-on-scroll img-dish-header img-fluid "
                   src="https://cdn.gobankingrates.com/wp-content/uploads/2019/07/Macaroni-Cheese-iStock-500802479.jpg"
                 ></img>
+               
                </a>
               </div>
               <div className="btn-direction ">
@@ -260,20 +270,19 @@ export default function HomeScreen() {
 
             <div className="bottom-header">
               <div className="bottom-header-right">
-                <p>TRY OUT BIOLOGICAL MENUS</p>
+                <p>Thử Tìm kiếm với Menu của chúng tôi</p>
                 <p>
-                  Enjoy your food in your own way. We will bring you the best
-                  meals
+                Thưởng thức món ăn của bạn theo cách của riêng bạn. Chúng tôi sẽ mang đến cho bạn những bữa ăn ngon nhất
                 </p>
                 <button
                   className=" btn peach-gradient "
                   style={{ fontSize: "14px", marginTop: "3rem" }}
                 >
-                  LEARN MORE
+                  Xem thêm
                 </button>
               </div>
               <div className="bottom-header-right2 scale-up-center  ">
-                <a href = 'http://localhost:32775/product/609e3957a05cbf19e1b6572a' className = 'img-contact2'>
+                <a href = '/product/60ab75014bb4e134533690e6' className = 'img-contact2'>
 
                 <img
                   className="img-beauty1 show-on-scroll"
@@ -294,14 +303,14 @@ export default function HomeScreen() {
           ></img>
           <div className="content-dish-special-left">
             <p className="content-dish">hoang trung nghia</p>
-            <a href="#">check</a>
+            <a href="#">Kiểm tra</a>
           </div>
         </div>
         <div className="session2">
           <div className="content-session2">
-            <p>SPECIAL REQUESTS</p>
-            <p>Special openings</p>
-            <a href="#">check</a>
+            <p>YÊU CẦU ĐẶC BIỆT</p>
+            <p>Mở đặc biệt</p>
+            <a href="#">Kiểm tra</a>
           </div>
         </div>
         <div className="session3">
@@ -311,15 +320,15 @@ export default function HomeScreen() {
           ></img>
           <div className="content-dish-special-right">
             <p className="content-dish">hoang trung nghia</p>
-            <a href="#">check</a>
+            <a href="#">Kiểm tra</a>
           </div>
           <div className="clear"></div>
         </div>
       </div>
       <div className="services">
         <div className="top-services" data-aos="flip-up">
-          <p>Best Solutions</p>
-          <p>OUR SERVICES</p>
+          <p>Giải pháp tốt nhất</p>
+          <p>DỊCH VỤ CỦA CHÚNG TÔI</p>
         </div>
         <div className="row" data-aos="zoom-in-up">
           <div className="content-left-services col">
@@ -341,35 +350,37 @@ export default function HomeScreen() {
             )} */}
 
             <div className="">
-              <Link className="" to="/search/category/chao">
+              <Link className="" to="search/category/Thịt%20Bò">
                 <img
                   className="img-card box"
-                  src="https://luhanhvietnam.com.vn/du-lich/vnt_upload/news/12_2020/thit-trau-la-trong-quang-tri-xao.jpg"
+                  src={thitbo}
+                  style= {{width : '250px'}}
                 ></img>
               </Link>
             </div>
             <div className="">
-              <Link className="" to="/search/category/food category">
+              <Link className="" to="/search/category/Món%20ăn%20truyền%20thống%20Việt%20Nam">
                 <img
                   className="img-card box"
-                  src="https://image.freepik.com/free-photo/traditional-food-chicken-soup-with-ginseng_1205-8407.jpg"
+                  src= {monan}
+                  style= {{width : '250px'}}
+                ></img>
+              </Link>
+            </div>
+            <div className="" data-aos="zoom-in-up" >
+              <Link className="" to="/search/category/Nước%20uống">
+                <img
+                  className="img-card box"
+                  src= {drink} style= {{width : '250px'}}
                 ></img>
               </Link>
             </div>
             <div className="" data-aos="zoom-in-up">
-              <Link className="" to="/search/category/sample category">
-                <img
-                  className="img-card box"
-                  src="https://topvietnamtravel.com/wp-content/uploads/2018/10/Rice-noodle-soup-with-Snakehead-fish.jpg"
-                ></img>
-              </Link>
-            </div>
-            <div className="" data-aos="zoom-in-up">
-              <Link className="">
+              <Link className="" to ="/search/category/Món%20ăn%20nhanh">
                 <img
                   className="img-card box img-responsive-special"
-                  style={{ marginTop: "-200px" }}
-                  src="https://vinlove.net/wp-content/uploads/2020/11/dac-san-quang-tri-banh-it-la-gai.jpg"
+                  style={{ marginTop: "10px",width : '250px' }} 
+                  src={fastFood}
                 ></img>
               </Link>
             </div>
@@ -405,8 +416,8 @@ export default function HomeScreen() {
 
       <div className="reserve-book row" data-aos="zoom-in-down">
         <div className="col-4 content-book">
-          <p>Reserve!!!</p>
-          <p>Book Now</p>
+          <p>Dự trữ!!!</p>
+          <p>Đặt bàn ngay bây giờ</p>
         </div>
         <div className="date-time col-4">
           {/* <Calendar
@@ -437,22 +448,22 @@ export default function HomeScreen() {
           </div>
         </div>
        
-          <div className="content-comment  col-4">Discover our new Menu!</div>
+          <div className="content-comment  col-4">Khám phá Menu mới của chúng tôi!</div>
   
       </div>
 
       {/* ========= SPECIAL - FOOD ============== */}
       <div className="special-food row">
         <div className="menu-header" data-aos="zoom-in-down">
-          <p>Best Menu</p>
-          <p>Special</p>
+          <p>Thực đơn tốt nhất</p>
+          <p>Đặc biệt</p>
         </div>
         <div className="col-6 " data-aos="zoom-in-down">
-          <div className=" special-left">
-            <img src="https://vinlove.net/wp-content/uploads/2020/11/dac-san-quang-tri-banh-it-la-gai.jpg"></img>
+          <div className=" special-left ">
+            <img src= {thitbo} className = 'small' style = {{width :'80px'}}></img>
             <div className="content-special">
-              <p>PASTA WITH FISH</p>
-              <p>Lorem ipsum dolor sit</p>
+              <p>BÒ OM XÌ DẦU</p>
+              <p>Thịt Bò</p>
             </div>
             <div className="content-special-left">
               <p> $39</p>
@@ -466,7 +477,7 @@ export default function HomeScreen() {
           </div>
           <div className="menu-content">
             <div className="content-special">
-              <p>PASTA WITH FISH</p>
+              <p>PASTA VỚI CÁ</p>
               <p>Lorem ipsum dolor sit</p>
             </div>
             <div className="content-special-left">
@@ -479,7 +490,7 @@ export default function HomeScreen() {
           </div>
           <div className="menu-content">
             <div className="content-special">
-              <p>PASTA WITH FISH</p>
+              <p>PASTA VỚI CÁ</p>
               <p>Lorem ipsum dolor sit</p>
             </div>
             <div className="content-special-left">
@@ -496,7 +507,7 @@ export default function HomeScreen() {
           </div>
           <div className="menu-content">
             <div className="content-special">
-              <p>PASTA WITH FISH</p>
+              <p>PASTA VỚI CÁ</p>
               <p>Lorem ipsum dolor sit</p>
             </div>
             <div className="content-special-left">
@@ -510,7 +521,7 @@ export default function HomeScreen() {
           </div>
           <div className="menu-content">
             <div className="content-special">
-              <p>PASTA WITH FISH</p>
+              <p>PASTA VỚI CÁ</p>
               <p>Lorem ipsum dolor sit</p>
             </div>
             <div className="content-special-left">
@@ -523,7 +534,7 @@ export default function HomeScreen() {
           </div>
           <div className="menu-content">
             <div className="content-special">
-              <p>PASTA WITH FISH</p>
+              <p>PASTA VỚI CÁ</p>
               <p>Lorem ipsum dolor sit</p>
             </div>
             <div className="content-special-left">
@@ -535,35 +546,28 @@ export default function HomeScreen() {
       </div>
       <div className="contact-us row">
         <div className="col-6 contact-input-left" data-aos="fade-down-right">
-          <div className="head-contact">
-            <p>CONTACT US</p>
-            <p>Drop Us A Line</p>
+          <div className=" img-contact2">
+            <img
+                className="img-beauty1 show-on-scroll small" style = {{float : 'left'}}
+                src= {anh2}
+              ></img>
+              <img
+                className="img-beauty1 show-on-scroll small" style = {{float : 'left'}}
+                src={anh4}
+              ></img>
           </div>
 
-          <div>
-            <input
-              type="text"
-              placeholder="Name"
-              className="input-contact"
-            ></input>
-            <input
-              type="text"
-              placeholder="Subject"
-              className="input-contact"
-            ></input>
-            <input
-              type="Email"
-              placeholder="Email"
-              className="input-contact"
-            ></input>
-            <textarea
-              placeholder="Message"
-              className="input-contact"
-              rows={4}
-              cols={50}
-            ></textarea>
+          <div className="img-contact2">
+            <img
+                className="img-beauty1 show-on-scroll small"
+                src={anh1}
+              ></img>
+              <img
+                className="img-beauty1 show-on-scroll small"
+                src={anh3}
+              ></img>
           </div>
-          <button>Send Now</button>
+        
         </div>
         <div className="col-6">
           <div className="img-contact1" id="container-img">
@@ -598,7 +602,7 @@ export default function HomeScreen() {
       <div className="content-home"></div>
       <p className = 'menu-header  text-center' style={{
         color : 'yellowgreen'
-      }} >Top Sellers</p>
+      }} >Bán chạy nhất</p>
    
       
       {loadingSellers ? (
@@ -607,7 +611,7 @@ export default function HomeScreen() {
         <MessageBox variant="danger">{errorSellers}</MessageBox>
       ) : (
         <>
-          {sellers.length === 0 && <MessageBox>No Seller Found</MessageBox>}
+          {sellers.length === 0 && <MessageBox>Không tìm thấy người bán</MessageBox>}
           <Carousel showArrows autoPlay showThumbs={false}>
             {sellers.map((seller) => (
               <div key={seller._id}>
@@ -622,14 +626,14 @@ export default function HomeScreen() {
       )}
       <p className = 'menu-header  text-center' style={{
         color : 'yellowgreen'
-      }}  data-aos="fade-right " data-aos-offset="300"  data-aos-easing="ease-in-sine">Featured Products</p>
+      }}  data-aos="fade-right " data-aos-offset="300"  data-aos-easing="ease-in-sine">Sản phẩm nổi bật</p>
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <>
-          {products.length === 0 && <MessageBox>No Product Found</MessageBox>}
+          {products.length === 0 && <MessageBox>Không tìm thấy sản phẩm</MessageBox>}
           <div className="row center">
             {products.map((product) => (
               <Product key={product._id} product={product}></Product>
@@ -637,6 +641,8 @@ export default function HomeScreen() {
           </div>
         </>
       )}
-    </div>
+    
+      <div style={{ marginBottom: "10rem" }}></div>
+          </div>
   );
 }

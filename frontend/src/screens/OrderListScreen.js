@@ -42,12 +42,12 @@ export default function OrderListScreen(props) {
           <thead>
             <tr>
               <th>ID</th>
-              <th>USER</th>
-              <th>DATE</th>
-              <th>TOTAL</th>
-              <th>PAID</th>
-              <th>DELIVERED</th>
-              <th>ACTIONS</th>
+              <th>NGƯỜI DÙNG</th>
+              <th>NGÀY</th>
+              <th>TOÀN BỘ</th>
+              <th>ĐÃ THANH TOÁN</th>
+              <th>ĐÃ GIAO HÀNG</th>
+              <th>CHỨC NĂNG</th>
             </tr>
           </thead>
           <tbody>
@@ -71,7 +71,7 @@ export default function OrderListScreen(props) {
                       props.history.push(`/order/${order._id}`);
                     }}
                   >
-                    Details
+                   Chi tiết  
                     <i className="fas fa-info-circle m-2"></i>
                   </button>
                   <button
@@ -79,7 +79,7 @@ export default function OrderListScreen(props) {
                     className="small btn-delete"
                     onClick={() => deleteHandler(order)}
                   >
-                    Delete
+                   Xóa
                     <i className="far fa-trash-alt m-2"></i>
                   </button>
                 </td>

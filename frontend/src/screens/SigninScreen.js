@@ -37,12 +37,12 @@ export default function SigninScreen(props) {
             <img src={logoWeb}></img>
           </div>
           <div>
-            <h1>Sign In</h1>
+            <h1>Đăng nhập</h1>
           </div>
           {loading && <LoadingBox></LoadingBox>}
           {error && <MessageBox variant="danger">{error}</MessageBox>}
           <div>
-            <label htmlFor="email">Email address</label>
+            <label htmlFor="email">Địa chỉ email</label>
             <input
               type="email"
               id="email"
@@ -52,7 +52,7 @@ export default function SigninScreen(props) {
             ></input>
           </div>
           <div>
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">Mật khẩu</label>
             <input
               type="password"
               id="password"
@@ -66,9 +66,9 @@ export default function SigninScreen(props) {
             <button
               className="primary btn"
               type="submit"
-              style={{ fontSize: "20px" }}
+              style={{ fontSize: "20px",width:'300px' }}
             >
-              Sign In
+              Đăng nhập
             </button>
           </div>
           {/* <div>
@@ -96,9 +96,9 @@ export default function SigninScreen(props) {
         <div>
           <label />
           <div style={{ textAlign: "center" }}>
-            New customer?{" "}
+          Khách hàng mới?{" "}
             <Link to={`/register?redirect=${redirect}`}>
-              Create your account
+            Tạo tài khoản của bạn
             </Link>
           </div>
           <svg

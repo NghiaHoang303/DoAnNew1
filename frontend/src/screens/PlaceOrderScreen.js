@@ -6,7 +6,7 @@ import CheckoutSteps from '../components/CheckoutSteps';
 import { ORDER_CREATE_RESET } from '../constants/orderConstants';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
-import "../scss/cardOderScreen.css";
+import "../scss/cardOderScreen.css";   
 
 export default function PlaceOrderScreen(props) {
   const cart = useSelector((state) => state.cart);
@@ -39,11 +39,11 @@ export default function PlaceOrderScreen(props) {
         <div className="col-9">
           <ul id ='nav-card'>
             <li  className="col-4" style={{ display: "inline-block" }}>
-              <div  className="card card-body  card-Oder-Screen">
-                <h2>Shipping</h2>
+              <div  className="card card-body card-Oder-Screen "  style ={{width :'200%'}}>
+                <h2>Đang chuyển hàng</h2>
                 <p>
-                  <strong>Name:</strong> {cart.shippingAddress.fullName} <br />
-                  <strong>Address: </strong> {cart.shippingAddress.address},
+                  <strong>Tên:</strong> {cart.shippingAddress.fullName} <br />
+                  <strong>Địa chỉ: </strong> {cart.shippingAddress.address},
                   {cart.shippingAddress.city}, {cart.shippingAddress.postalCode}
                   ,{cart.shippingAddress.country}
                 </p>
@@ -52,34 +52,35 @@ export default function PlaceOrderScreen(props) {
             <li className="col-4 "
             //  style={{ display: "inline-block" }
              >
-              <div className="card card-body  card-Oder-Screen">
-                <h2>Payment</h2>
+              <div className="card card-body card-Oder-Screen "  style ={{width :'200%'}}>
+                <h2>Thanh toán</h2>
                 <p>
-                  <strong>Method:</strong> {cart.paymentMethod}
+                  <strong>Phương pháp:</strong> {cart.paymentMethod}
                 </p>
               </div>
             </li>
             <li  className="col-4" style={{ display: "inline-block" }}  >
-              <div className="card card-body  card-Oder-Screen">
-                <h2>Order Items</h2>
+              <div className="card card-body card-Oder-Screen " style ={{width :'200%'}}>
+                <h2>Đặt hàng các mặt hàng</h2>
                 <ul>
                   {cart.cartItems.map((item) => (
                     <li key={item.product}>
                       <div className="row" style={{ textAlign: "center" }}>
-                        <div>
+                        <div className='col'>
                           <img
                             src={item.image}
                             alt={item.name}
-                            className="small"
+                            className="small" 
+                            style ={{width: '100px  '}}
                           ></img>
                         </div>
-                        <div className="min-30">
+                        <div className="min-30 col">
                           <Link to={`/product/${item.product}`}>
                             {item.name}
                           </Link>
                         </div>
 
-                        <div className="style-price">
+                        <div className="style-price col ">
                           {item.qty} x ${item.price} = ${item.qty * item.price}
                         </div>
                       </div>
@@ -92,30 +93,30 @@ export default function PlaceOrderScreen(props) {
         </div>
         <div className="col-3">
           <div className="card nav-car card-Oder-Screen card-Oder-Screen-responsive "  style={{ marginTop: "2rem" }}>
-          <h2>Order Summary</h2>
+          <h2><b>Thanh Toán Đơn Hàng</b></h2>
             <ul>
               <li className="statistical-content">
                 <div className="row">
-                  <div>Items</div>
+                  <div>Mặt hàng</div>
                   <div>${cart.itemsPrice.toFixed(2)}</div>
                 </div>
               </li>
               <li className="statistical-content">
                 <div className="row">
-                  <div>Shipping</div>
+                  <div>Đang chuyển hàng</div>
                   <div>${cart.shippingPrice.toFixed(2)}</div>
                 </div>
               </li>
               <li className="statistical-content">
                 <div className="row">
-                  <div>Tax</div>
+                  <div>Thuế</div>
                   <div>${cart.taxPrice.toFixed(2)}</div>
                 </div>
               </li>
               <li className="statistical-content">
                 <div className="row">
                   <div>
-                    <strong> Order Total</strong>
+                    <strong> Tổng đơn đặt hàng</strong>
                   </div>
                   <div>
                     <strong  style={{ color: "#ffbd0d" }}>${cart.totalPrice.toFixed(2)}</strong>
@@ -129,7 +130,7 @@ export default function PlaceOrderScreen(props) {
                   className="primary block btn-order"
                   disabled={cart.cartItems.length === 0}
                 >
-                  Place Order
+                 Đặt hàng
                 </button>
               </li>
               {loading && <LoadingBox></LoadingBox>}

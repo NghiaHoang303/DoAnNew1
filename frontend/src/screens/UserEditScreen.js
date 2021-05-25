@@ -50,7 +50,7 @@ export default function UserEditScreen(props) {
     <div className="pt-5">
       <form className="form form-edit-user" onSubmit={submitHandler}>
         <div>
-          <h1>Edit User {name}</h1>
+          <h1>Điều chỉnh người dùng {name}</h1>
           {loadingUpdate && <LoadingBox></LoadingBox>}
           {errorUpdate && (
             <MessageBox variant="danger">{errorUpdate}</MessageBox>
@@ -63,7 +63,7 @@ export default function UserEditScreen(props) {
         ) : (
           <>
             <div>
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">Tên</label>
               <input
                 id="name"
                 type="text"
@@ -83,7 +83,7 @@ export default function UserEditScreen(props) {
               ></input>
             </div>
             <div  style={{ width: "340px" }}>
-              <label htmlFor="isSeller">Is Seller</label>
+              <label htmlFor="isSeller">Người bán</label>
               <input
                 id="isSeller"
                 type="checkbox"
@@ -92,7 +92,7 @@ export default function UserEditScreen(props) {
               ></input>
             </div>
             <div  style={{ width: "340px" }}>
-              <label htmlFor="isAdmin">Is Admin</label>
+              <label htmlFor="isAdmin">Quản trị viên</label>
               <input
                 id="isAdmin"
                 type="checkbox"
@@ -101,8 +101,8 @@ export default function UserEditScreen(props) {
               ></input>
             </div>
             <div>
-              <button type="submit" className="primary btn">
-                Update
+              <button type="submit" className="primary btn-success">
+              Cập nhật
               </button>
             </div>
           </>

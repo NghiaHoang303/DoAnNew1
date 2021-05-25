@@ -54,7 +54,7 @@ export default function SellerScreen(props) {
               ></Rating>
             </li>
             <li>
-              <a href={`mailto:${user.email}`}>Contact Seller</a>
+              <a href={`mailto:${user.email}`}>Liên hệ với người bán</a>
             </li>
             <li>{user.seller.description}</li>
           </ul>
@@ -67,7 +67,7 @@ export default function SellerScreen(props) {
           <MessageBox variant="danger">{errorTables}</MessageBox>
         ) : (
           <>
-            {tables.length === 0 && <MessageBox>No Table Found</MessageBox>}
+            {tables.length === 0 && <MessageBox>Không tìm thấy bảng</MessageBox>}
             <div className="row center">
               {tables.map((table) => (
                 <Table key={table._id} table={table}></Table>

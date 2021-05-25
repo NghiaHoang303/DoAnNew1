@@ -90,7 +90,7 @@ export default function TableEditScreen(props) {
     <div>
       <form className="form form-create-product background-create-product" onSubmit={submitHandler}>
         <div>
-          <h1>Edit Table {tableId}</h1>
+          <h1>Chỉnh sửa bảng {tableId}</h1>
         </div>
         {loadingUpdate && <LoadingBox></LoadingBox>}
         {errorUpdate && <MessageBox variant="danger">{errorUpdate}</MessageBox>}
@@ -101,7 +101,7 @@ export default function TableEditScreen(props) {
         ) : (
           <>
             <div className="input-create">
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">Tên</label>
               <input
                 id="name"
                 type="text"
@@ -111,7 +111,7 @@ export default function TableEditScreen(props) {
               ></input>
             </div>
             <div className="input-create">
-              <label htmlFor="price">Price</label>
+              <label htmlFor="price">Giá bán</label>
               <input
                 id="price"
                 type="text"
@@ -121,7 +121,7 @@ export default function TableEditScreen(props) {
               ></input>
             </div>
             <div className="input-create">
-              <label htmlFor="image">Image</label>
+              <label htmlFor="image">Hình ảnh</label>
               <input
                 id="image"
                 type="text"
@@ -131,7 +131,7 @@ export default function TableEditScreen(props) {
               ></input>
             </div>
             <div className="input-create">
-              <label htmlFor="imageFile">Image File</label>
+              <label htmlFor="imageFile">Tệp hình ảnh</label>
               <input
                 type="file"
                 id="imageFile"
@@ -144,7 +144,7 @@ export default function TableEditScreen(props) {
               )}
             </div>
             <div className="input-create">
-              <label htmlFor="category">Category</label>
+              <label htmlFor="category">Thể loại</label>
               <input
                 id="category"
                 type="text"
@@ -154,7 +154,7 @@ export default function TableEditScreen(props) {
               ></input>
             </div>
             <div className="input-create">
-              <label htmlFor="brand">Brand</label>
+              <label htmlFor="brand">Nhãn hiệu</label>
               <input
                 id="brand"
                 type="text"
@@ -164,7 +164,7 @@ export default function TableEditScreen(props) {
               ></input>
             </div>
             <div className="input-create">
-              <label htmlFor="countInStock">Count In Stock</label>
+              <label htmlFor="countInStock">Đếm trong kho</label>
               <input
                 id="countInStock"
                 type="text"
@@ -174,7 +174,7 @@ export default function TableEditScreen(props) {
               ></input>
             </div>
             <div className="input-create">
-              <label htmlFor="description">Description</label>
+              <label htmlFor="description">Mô tả</label>
               <textarea
                 id="description"
                 rows="3"
@@ -186,8 +186,8 @@ export default function TableEditScreen(props) {
             </div>
             <div className="input-create">
               <label></label>
-              <button className="primary" type="submit">
-                Update
+              <button className="btn-success" type="submit">
+              Cập nhật
               </button>
             </div>
           </>

@@ -61,10 +61,10 @@ export default function ProfileScreen() {
   };
   return (
     <div>
-      <form className="form form-card" onSubmit={submitHandler}>
+      <form className="form form-card" style ={{height :'900px'}} onSubmit={submitHandler}>
       <div className="decoration-card">
         <div>
-            <h1>User Profile</h1>
+            <h1>Thông tin người dùng</h1>
             <h2
               style={{
                 fontSize: "30px",
@@ -92,11 +92,11 @@ export default function ProfileScreen() {
             )}
             {successUpdate && (
               <MessageBox variant="success">
-                Profile Updated Successfully
+                Hô sơ được cập nhật thành công
               </MessageBox>
             )}
             <div>
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">Tên</label>
               <input
                 id="name"
                 type="text"
@@ -116,7 +116,7 @@ export default function ProfileScreen() {
               ></input>
             </div>
             <div>
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">Mật khẩu</label>
               <input
                 id="password"
                 type="password"
@@ -125,7 +125,7 @@ export default function ProfileScreen() {
               ></input>
             </div>
             <div>
-              <label htmlFor="confirmPassword">confirm Password</label>
+              <label htmlFor="confirmPassword">Xác nhận mật khẩu</label>
               <input
                 id="confirmPassword"
                 type="password"
@@ -137,7 +137,7 @@ export default function ProfileScreen() {
               <>
                 <h2>Seller</h2>
                 <div>
-                  <label htmlFor="sellerName">Seller Name</label>
+                  <label htmlFor="sellerName">Tên người bán</label>
                   <input
                     id="sellerName"
                     type="text"
@@ -157,7 +157,7 @@ export default function ProfileScreen() {
                   ></input>
                 </div>
                 <div>
-                  <label htmlFor="sellerDescription">Seller Description</label>
+                  <label htmlFor="sellerDescription">Mô tả người bán</label>
                   <input
                     id="sellerDescription"
                     type="text"
@@ -171,7 +171,7 @@ export default function ProfileScreen() {
             <div>
               <label />
               <button className="update-profile-btn" type="submit">
-                Update
+              Cập nhật
               </button>
             </div>
           </>

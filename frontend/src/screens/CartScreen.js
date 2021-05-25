@@ -33,16 +33,17 @@ export default function CartScreen(props) {
   return (
     <div className="row top h-100">
       <div className="col-8 table-content">
-        <h1>Shopping Cart</h1>
+        <h1>Giỏ hàng</h1>
         <div className ='table-tab'>
         {error && <MessageBox variant="danger">{error}</MessageBox>}
         {cartItems.length === 0 ? (
           <div>
               <MessageBox>
           <br></br> <Link to="/" className = " link-transform" 
-            style ={{ position: 'absolute', marginLeft:'100px',display: 'inline'}}
-
-            >Go Shopping</Link>
+            // style ={{ position: 'absolute', marginLeft:'100px',display: 'inline'}}
+            style ={{ position: 'absolute', marginLeft:'210px',display: 'inline',  
+            top: '209px'}}
+            >Đặt món ngay</Link>
           </MessageBox>
           <img src ={hinh1} className ='w-200 img-card-table-responsive'
           style ={{
@@ -103,7 +104,7 @@ export default function CartScreen(props) {
                           // }}
                         >
                            {" "}
-                        Price
+                           Giá bán
                       
                       </div>
                       <div
@@ -123,7 +124,7 @@ export default function CartScreen(props) {
                         type="button "
                         onClick={() => removeFromCartHandler(item.product)}
                       >
-                        Delete
+                       Xóa
                         <i className="far fa-trash-alt m-2"></i>
                       </button>
                     </div>
@@ -144,7 +145,7 @@ export default function CartScreen(props) {
           <ul>
             <li>
               <h2>
-                Subtotal ({cartItems.reduce((a, c) => a + c.qty, 0)} items) : $
+              Tổng phụ ({cartItems.reduce((a, c) => a + c.qty, 0)} mặt hàng) : $
                 {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
               </h2>
             </li>
@@ -155,7 +156,7 @@ export default function CartScreen(props) {
                 className="primary block"
                 disabled={cartItems.length === 0}
               >
-                Proceed to Checkout
+                Tiến hành kiểm tra
               </button>
             </li>
           </ul>

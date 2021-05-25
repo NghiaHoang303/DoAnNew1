@@ -56,7 +56,7 @@ export default function TableScreen(props) {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <div>
-          <Link to="/">Back to result</Link>
+          <Link to="/">Trở về trang chủ</Link>
           <div className="row top">
             <div className="col-4">
               <img
@@ -76,9 +76,9 @@ export default function TableScreen(props) {
                     numReviews={table.numReviews}
                   ></Rating>
                 </li>
-                <li className="description-product">Pirce : ${table.price}</li>
+                <li className="description-product">Giá bán : ${table.price}</li>
                 <li className="description-product">
-                  Description:
+                Mô tả
                   <p>{table.description}</p>
                 </li>
               </ul>
@@ -87,7 +87,7 @@ export default function TableScreen(props) {
               <div className="card card-body card-product-seller">
                 <ul>
                   <li>
-                    Seller{' '}
+                  Người bán{' '}
                     <h2>
                       <Link to={`/seller/${table.seller._id}`}>
                         {table.seller.seller.name}
@@ -106,12 +106,12 @@ export default function TableScreen(props) {
                   </li>
                   <li>
                     <div className="row">
-                      <div className ='"col-5 "'>Status</div>
+                      <div className ='"col-5 "'>Trạng thái</div>
                       <div  className="col-3" >
                         {table.countInStock > 0 ? (
-                          <span className="success">In Stock</span>
+                          <span className="success">Trong kho</span>
                         ) : (
-                          <span className="danger">Unavailable</span>
+                          <span className="danger">Không có sẵn</span>
                         )}
                       </div>
                     </div>
@@ -120,7 +120,7 @@ export default function TableScreen(props) {
                     <>
                       <li>
                         <div className="row">
-                          <div div className="col-5">Qty</div>
+                          <div div className="col-5">Số lượng</div>
                           <div  className="col-3">
                             <select
                               value={qty}
@@ -148,7 +148,7 @@ export default function TableScreen(props) {
                             marginLeft: "-1rem",
                           }}
                         >
-                          Add to Table Cart
+                         Thêm bàn
                         </button>
                       </li>
                     </>
@@ -158,9 +158,11 @@ export default function TableScreen(props) {
             </div>
           </div>
           <div  className="reviews-client">
-            <h2 id="reviews">Reviews</h2>
+            <h2 id="reviews"> 
+              Nhận xét
+               </h2>
             {table.reviews.length === 0 && (
-              <MessageBox>There is no review</MessageBox>
+              <MessageBox>Không có đánh giá</MessageBox>
             )}
             <ul>
               {table.reviews.map((review) => (
@@ -175,10 +177,10 @@ export default function TableScreen(props) {
                 {userInfo ? (
                   <form className="form" onSubmit={submitHandler}>
                     <div>
-                      <h2>Write a customer review</h2>
+                      <h2>Viết nhận xét của khách hàng</h2>
                     </div>
                     <div>
-                      <label htmlFor="rating">Rating</label>
+                      <label htmlFor="rating">Xếp hạng</label>
                       <select
                        className="rating-of-client"
                         id="rating"
@@ -194,7 +196,7 @@ export default function TableScreen(props) {
                       </select>
                     </div>
                     <div>
-                      <label htmlFor="comment">Comment</label>
+                      <label htmlFor="comment">Bình luận</label>
                       <textarea
                         id="comment"
                         value={comment}
@@ -204,7 +206,7 @@ export default function TableScreen(props) {
                     <div>
                       <label />
                       <button className="primary" type="submit">
-                        Submit
+                      Gửi đi
                       </button>
                     </div>
                     <div>
@@ -218,7 +220,7 @@ export default function TableScreen(props) {
                   </form>
                 ) : (
                   <MessageBox>
-                    Please <Link to="/signin">Sign In</Link> to write a review
+                    Xin vui lòng <Link to="/signin">Đăng nhập</Link> viết một bài đánh giá
                   </MessageBox>
                 )}
               </li>

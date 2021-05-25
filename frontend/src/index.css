@@ -710,7 +710,8 @@ aside {
 }
 aside.open {
   transform: translateX(0);
-  background-image: url("https://crossware.co.nz/wp-content/uploads/2020/09/cute-food-dancing-gif.gif");
+  /* background-image: url("https://crossware.co.nz/wp-content/uploads/2020/09/cute-food-dancing-gif.gif"); */
+  background: linear-gradient(40deg, rgb(106, 248, 50), rgb(36, 230, 255));
   background-size: cover;
   width: 380px;
   text-align: justify;

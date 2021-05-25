@@ -30,7 +30,7 @@ export default function BookingListScreen(props) {
   };
   return (
     <div>
-      <h1>Bookings</h1>
+      <h1>Đặt bàn</h1>
       {loadingDelete && <LoadingBox></LoadingBox>}
       {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
       {loading ? (
@@ -42,12 +42,11 @@ export default function BookingListScreen(props) {
           <thead>
             <tr>
               <th>ID</th>
-              <th>USER</th>
-              <th>DATE</th>
-              <th>TOTAL</th>
-              <th>PAID</th>
-              <th>DELIVERED</th>
-              <th>ACTIONS</th>
+              <th>NGƯỜI DÙNG</th>
+              <th>NGÀY</th>
+              <th>TỔNG</th>
+              <th>ĐÃ THANH TOÁN</th>
+              <th>CHỨC NĂNG</th>
             </tr>
           </thead>
           <tbody>
@@ -59,11 +58,6 @@ export default function BookingListScreen(props) {
                 <td>{booking.totalPrice.toFixed(2)}</td>
                 <td>{booking.isPaid ? booking.paidAt.substring(0, 10) : 'No'}</td>
                 <td>
-                  {booking.isDelivered
-                    ? booking.deliveredAt.substring(0, 10)
-                    : 'No'}
-                </td>
-                <td>
                   <button
                     type="button"
                     className="small btn-detail"
@@ -71,7 +65,7 @@ export default function BookingListScreen(props) {
                       props.history.push(`/booking/${booking._id}`);
                     }}
                   >
-                    Details
+                    Chi tiết
                     <i className="fas fa-info-circle m-2"></i>
                   </button>
                   <button
@@ -79,7 +73,7 @@ export default function BookingListScreen(props) {
                     className="small btn-delete"
                     onClick={() => deleteHandler(booking)}
                   >
-                    Delete
+                    Xóa
                     <i className="far fa-trash-alt m-2"></i>
                   </button>
                 </td>

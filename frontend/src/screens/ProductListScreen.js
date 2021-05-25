@@ -70,7 +70,7 @@ export default function ProductListScreen(props) {
   return (
     <div>
       <div className="row">
-        <h1>Products</h1>
+        <h1>Các sản phẩm</h1>
         <button type="button" className="primary btn btn-function" 
         style = {{width :'250px',
             float:'left',
@@ -78,7 +78,7 @@ export default function ProductListScreen(props) {
             right : 0
         }}
         onClick={createHandler}>
-          Create Product
+          Tạo sản phẩm
           <i className="fas fa-plus m-2"></i>
         </button>
       </div>
@@ -98,11 +98,11 @@ export default function ProductListScreen(props) {
             <thead>
               <tr>
                 <th>ID</th>
-                <th>NAME</th>
-                <th>PRICE</th>
-                <th>CATEGORY</th>
-                <th>BRAND</th>
-                <th>ACTIONS</th>
+                <th>TÊN</th>
+                <th>GIÁ BÁN</th>
+                <th>THỂ LOẠI</th>
+                <th>NHÃN HIỆU</th>
+                <th>HÀNH ĐỘNG</th>
               </tr>
             </thead>
             <tbody>
@@ -121,7 +121,7 @@ export default function ProductListScreen(props) {
                         props.history.push(`/product/${product._id}/edit`)
                       }
                     >
-                      Edit
+                      Chỉnh sửa
                       <i className="far fa-edit m-2"></i>
                     </button>
                     <button
@@ -129,7 +129,7 @@ export default function ProductListScreen(props) {
                       className="small  btn-delete"
                       onClick={() => deleteHandler(product)}
                     >
-                      Delete
+                     Xóa
                       <i className="far fa-trash-alt m-2"></i>
                     </button>
                   </td>

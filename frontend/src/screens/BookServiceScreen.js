@@ -77,7 +77,7 @@ export default function BookServiceScreen(props) {
   return (
     <div className="header">
       <div className="content-header-book">
-        <p>Service Book !!!</p>
+        <p>Dịch vụ đặt bàn !!!</p>
         <img
           src="https://i.pinimg.com/564x/78/46/3b/78463bbf849d67642f95c0303c4627cf.jpg"
           className="image-book-1"
@@ -102,14 +102,14 @@ export default function BookServiceScreen(props) {
           </div>
 
     <div>
-      <h2  >Featured Tables</h2>
+      <h2  >Vị trí bàn nổi bật</h2>
      {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <>
-          {tables.length === 0 && <MessageBox>No Table Found</MessageBox>}
+          {tables.length === 0 && <MessageBox>không tìm thấy bàn</MessageBox>}
           <div className="row center">
             {tables.map((table) => (
               <Table key={table._id} table={table}></Table>
@@ -119,17 +119,18 @@ export default function BookServiceScreen(props) {
       )}
     </div>
     <div className="row center pagination">
+                
                 {[...Array(pages).keys()].map((x) => (
-                  <Link
-                    className={x + 1 === page ? 'active' : ''}
-                    key={x + 1}
-                    to={getFilterUrl({ page: x + 1 })}
-                  >
-                    {x + 1}
-                  </Link>
-                ))}
+              <Link
+                className={x + 1 === page ? 'active' : ''}
+                key={x + 1}
+                to={`/BookServiceScreen/tablelist/pageNumber/${x + 1}`}
+              >
+                {x + 1}
+              </Link>
+            ))}
               </div>
-          <div className="specialities">ddd</div>
+          <div className="specialities"></div>
         </div>
       </div>
     </div>

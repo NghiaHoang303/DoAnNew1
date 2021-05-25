@@ -13,7 +13,7 @@ export default function OrderHistoryScreen(props) {
   }, [dispatch]);
   return (
     <div>
-      <h1>Order History</h1>
+      <h1>lịch sử đơn hàng</h1>
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
@@ -23,11 +23,11 @@ export default function OrderHistoryScreen(props) {
           <thead>
             <tr>
               <th>ID</th>
-              <th>DATE</th>
-              <th>TOTAL</th>
-              <th>PAID</th>
-              <th>DELIVERED</th>
-              <th>ACTIONS</th>
+              <th>NGÀY</th>
+              <th>TOÀN BỘ</th>
+              <th>ĐÃ THANH TOÁN</th>
+              <th>ĐÃ GIAO HÀNG</th>
+              <th>CHỨC NĂNG</th>
             </tr>
           </thead>
           <tbody>
@@ -50,7 +50,7 @@ export default function OrderHistoryScreen(props) {
                       props.history.push(`/order/${order._id}`);
                     }}
                   >
-                    Details    
+                    Chi tiết  
                     <i className="fas fa-info-circle m-2"></i>
                   </button>
                 </td>

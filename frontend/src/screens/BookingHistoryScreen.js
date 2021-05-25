@@ -13,7 +13,7 @@ export default function BookingHistoryScreen(props) {
   }, [dispatch]);
   return (
     <div>
-      <h1>Booking History</h1>
+      <h1>Lịch sử đặt chỗ</h1>
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
@@ -23,11 +23,10 @@ export default function BookingHistoryScreen(props) {
           <thead>
             <tr>
               <th>ID</th>
-              <th>DATE</th>
-              <th>TOTAL</th>
-              <th>PAID</th>
-              <th>DELIVERED</th>
-              <th>ACTIONS</th>
+              <th>NGÀY</th>
+              <th>TỔNG</th>
+              <th>ĐÃ THANH TOÁN</th>
+              <th>CHỨC NĂNG</th>
             </tr>
           </thead>
           <tbody>
@@ -38,11 +37,6 @@ export default function BookingHistoryScreen(props) {
                 <td>{booking.totalPrice.toFixed(2)}</td>
                 <td>{booking.isPaid ? booking.paidAt.substring(0, 10) : 'No'}</td>
                 <td>
-                  {booking.isDelivered
-                    ? booking.deliveredAt.substring(0, 10)
-                    : 'No'}
-                </td>
-                <td>
                   <button
                     type="button"
                     className="small"
@@ -50,7 +44,7 @@ export default function BookingHistoryScreen(props) {
                       props.history.push(`/booking/${booking._id}`);
                     }}
                   >
-                    Details
+                   Chi tiết
                   </button>
                 </td>
               </tr>

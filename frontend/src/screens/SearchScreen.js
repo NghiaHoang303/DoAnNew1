@@ -57,7 +57,7 @@ export default function SearchScreen(props) {
     <div>
       <div className="row header-of-search-screen" >
       <div className="menu-name">
-          <p className="">MENU</p>
+          <p className="">THỰC ĐƠN</p>
         </div>
         {loading ? (
           <LoadingBox></LoadingBox>
@@ -65,21 +65,21 @@ export default function SearchScreen(props) {
           <MessageBox variant="danger">{error}</MessageBox>
         ) : (
           <div className="name-header">
-            <h2 style={{ marginTop: "-5rem" }}>Results : {products.length}</h2>
+            <h2 style={{ marginTop: "-5rem" }}>Kết quả : {products.length}</h2>
           </div>
         )}
         <div  className="sort-by-filter">
-          Sort by{' '}
+        Sắp xếp theo{' '}
           <select
             value={order}
             onChange={(e) => {
               props.history.push(getFilterUrl({ order: e.target.value }));
             }}
           >
-            <option value="newest">Newest Arrivals</option>
-            <option value="lowest">Price: Low to High</option>
-            <option value="highest">Price: High to Low</option>
-            <option value="toprated">Avg. Customer Reviews</option>
+            <option value="newest">Hàng mới nhất</option>
+            <option value="lowest">Giá: Thấp đến cao</option>
+            <option value="highest">Giá: từ cao đến thấp</option>
+            <option value="toprated">Trung bình Phản hồi khách hàng</option>
           </select>
         </div>
       </div>
@@ -90,7 +90,7 @@ export default function SearchScreen(props) {
             style={{ marginTop: "-10px", borderRadius: "0px 16px 10px 0" }}
           >
             <i className="fas fa-hamburger mr-4"></i>
-            Department
+            Thể loại
           </h3>
           <div>
             {loadingCategories ? (
@@ -104,7 +104,7 @@ export default function SearchScreen(props) {
                     className={'all' === category ? 'active' : ''}
                     to={getFilterUrl({ category: 'all' })}
                   >
-                    Any
+                  Bất kì
                   </Link>
                 </li>
                 {categories.map((c) => (
@@ -123,7 +123,7 @@ export default function SearchScreen(props) {
           <div>
             <h3 className="session-menu">
             <i className="fas fa-dollar-sign mr-4"></i>
-              Price</h3>
+            Giá bán</h3>
             <ul>
               {prices.map((p) => (
                 <li className="option-menu"
@@ -144,7 +144,7 @@ export default function SearchScreen(props) {
             <h3 className="session-menu">
           <i className="far fa-star mr-4"></i>
               
-              Avg. Customer Review</h3>
+          Trung bình Đánh giá của khách hàng</h3>
             <ul>
               {ratings.map((r) => (
                 <li  className="option-menu" key={r.name}>
@@ -167,7 +167,7 @@ export default function SearchScreen(props) {
           ) : (
             <>
               {products.length === 0 && (
-                <MessageBox>No Product Found</MessageBox>
+                <MessageBox>Không tìm thấy sản phẩm</MessageBox>
               )}
               <div className="row center  menus-card">
                 {products.map((product) => (

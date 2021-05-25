@@ -115,7 +115,7 @@ export default function SupportScreen() {
     <div className="row top full-container">
       <div className="col  support-users">
         <div style={{ fontWeight: "500", fontSize: "36px" }}>
-          Chats
+        Trò chuyện
           <div className="" style={{ width: "60%", float: "right" }}>
             <i className="fas fa-meh-blank icons-chat"></i>
             <i className="fas fa-video icons-chat"></i>
@@ -130,7 +130,7 @@ export default function SupportScreen() {
           ></input>
         </div>
         {users.filter((x) => x._id !== userInfo._id).length === 0 && (
-          <MessageBox>No Online User Found</MessageBox>
+          <MessageBox>Không tìm thấy người dùng trực tuyến</MessageBox>
         )}
         <ul>
           {users
@@ -158,14 +158,17 @@ export default function SupportScreen() {
       </div>
       <div className="col-6 support-messages">
         {!selectedUser._id ? (
-          <MessageBox>Select a user to start chat</MessageBox>
+          <div>
+
+            Chọn một người dùng để bắt đầu trò chuyện
+          </div>
         ) : (
           <div>
             <div className="row chat-with-user">
-              <strong>Chat with {selectedUser.name} </strong>
+              <strong>Trò chuyện với {selectedUser.name} </strong>
             </div>
             <ul ref={uiMessagesRef} className="content-inbox">
-              {messages.length === 0 && <li>No message.</li>}
+              {messages.length === 0 && <li>Không có tin nhắn.</li>}
               {messages.map((msg, index) => (
                 <li key={index}>
                   <strong>{`${msg.name}: `}</strong> {msg.body}
@@ -191,7 +194,7 @@ export default function SupportScreen() {
                     width:'100px'
                   }}
                 >
-                  Send
+                 Gửi
                 </button>
               </form>
             </div>

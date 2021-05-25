@@ -52,7 +52,7 @@ export default function AboutUsScreen(props) {
       <form className="" onSubmit={submitHandler}>
         <div>
           <div style={{ textAlign: "center" }}>
-            <h1>About Us</h1>
+            <h1>Về chúng tôi</h1>
           </div>
           <div className="content-about-us">
           Thực phẩm Việt Nam ngày càng được đánh giá cao trên toàn cầu. Có các nhà hàng Việt Nam ở khắp Châu Âu và Mỹ hoặc bất cứ nơi nào người Việt nhập cư đến định cư. Ẩm thực của họ được coi là một trong những chế độ ăn uống lành mạnh trên thế giới, chủ yếu là do sử dụng tối thiểu dầu, ít thịt và nhiều rau tươi. Món ăn Việt Nam có ảnh hưởng từ nhiều nền văn hóa khác nhau bao gồm Ấn Độ, Trung Quốc, Pháp và Mỹ. Do đó, nhiều người coi ẩm thực Việt Nam là món ăn kết hợp nguyên bản và giản dị. Thực đơn Việt Nam nhất định phải thử bao gồm Phở (phở bò), Bánh Mì Thít (bánh mì tròn nhồi với nhiều nguyên liệu khác nhau như giăm bông) và bánh cuốn tôm tươi Việt Nam.
@@ -62,7 +62,7 @@ export default function AboutUsScreen(props) {
 
       <div className="row member-about-us">
         <div className="" style={{ textAlign: "center" }}>
-          <h1>Member</h1>
+          <h1>Thành viên</h1>
         </div>
         <div className="col-6">
           <div className="card-container-about-us">
@@ -78,7 +78,7 @@ export default function AboutUsScreen(props) {
               </div>
               <div className="back-about-us">
                 <h3 className="synopsis-about-us">Duong Van Tu</h3>
-                <p className="p-about-us">Founder of VietFood</p>
+                <p className="p-about-us">Người sáng lập VietFood</p>
                 <div className="btn-about-us">
                   <i className="fab fa-facebook-f"></i>
                   <a
@@ -86,12 +86,12 @@ export default function AboutUsScreen(props) {
                     href="https://www.facebook.com/profile.php?id=100029994021905"
                   >
                     {" "}
-                    Watch now
+                    Xem bây giờ
                   </a>
                 </div>
                 <div className="btn-about-us secondary-about-us">
                   <i className="fa fa-heart " />
-                  Add to list
+                  Thêm vào danh sách
                 </div>
               </div>
             </div>
@@ -111,7 +111,7 @@ export default function AboutUsScreen(props) {
               </div>
               <div className="back-about-us">
                 <h3 className="synopsis-about-us">Hoang Trung Nghia</h3>
-                <p className="p-about-us">Founder of VietFood</p>
+                <p className="p-about-us">Người sáng lập VietFood</p>
                 <div className="btn-about-us ">
                   <i className="fab fa-facebook-f"></i>
                   <a
@@ -119,12 +119,12 @@ export default function AboutUsScreen(props) {
                     href="https://www.facebook.com/profile.php?id=100006705799121"
                   >
                     {" "}
-                    Watch now
+                    Xem bây giờ
                   </a>
                 </div>
                 <div className="btn-about-us secondary-about-us">
                   <i className="fa fa-heart " />
-                  Add to list
+                  Thêm vào danh sách
                 </div>
               </div>
             </div>

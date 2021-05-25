@@ -36,7 +36,7 @@ export default function CartTableScreen(props) {
     >
       <div className="col-8 table-content">
         <div>
-          <h1>Booking Table Cart</h1>
+          <h1>Đặt bàn</h1>
         </div>
         <div className ='table-tab'>
         {error && <MessageBox variant="danger">{error}</MessageBox>}
@@ -46,10 +46,11 @@ export default function CartTableScreen(props) {
             <MessageBox>
  
           <Link to="/BookServiceScreen" className = " link-transform mt-5" 
-            style ={{ position: 'absolute', marginLeft:'100px',display: 'inline'}}
+            style ={{ position: 'absolute', marginLeft:'210px',display: 'inline',  
+            top: '209px'}}
 
             >
-          Book table </Link>
+          Đặt bàn </Link>
          
           </MessageBox>
              <img src ={hinh1} className ='w-200 img-card-table-responsive'
@@ -64,7 +65,7 @@ export default function CartTableScreen(props) {
           <ul>
             {cartTableItems.map((item) => (
               <li key={item.table}>
-                <div className="row">
+                <div className="row" style ={{float : 'left'}}>
                   <div className='col-6 content-shop-card'>
                       <div>
                         <img
@@ -111,7 +112,7 @@ export default function CartTableScreen(props) {
                            }}
                         >
                            {" "}
-                        Price
+                           Giá bán
                       
                       </div>
                          <div className="item-price-style ">${item.price}</div>
@@ -126,7 +127,7 @@ export default function CartTableScreen(props) {
                             fontSize: "16px",
                           }}
                        >
-                          Delete
+                         Xóa
                           <i className="far fa-trash-alt m-2"></i>
                         </button>
                       </div>
@@ -148,7 +149,7 @@ export default function CartTableScreen(props) {
           <ul>
             <li>
               <h2>
-                Subtotal ({cartTableItems.reduce((a, c) => a + c.qty, 0)} items) : $
+              Tổng ({cartTableItems.reduce((a, c) => a + c.qty, 0)} mặt hàng) : $
                 {cartTableItems.reduce((a, c) => a + c.price * c.qty, 0)}
               </h2>
             </li>
@@ -159,7 +160,7 @@ export default function CartTableScreen(props) {
                 className="primary block"
                 disabled={cartTableItems.length === 0}
               >
-                Proceed to Checkout
+                Tiến hành kiểm tra
               </button>
             </li>
           </ul>

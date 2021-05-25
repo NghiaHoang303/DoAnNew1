@@ -70,9 +70,9 @@ export default function TableListScreen(props) {
   return (
     <div>
       <div className="row">
-        <h1>Tables</h1>
-        <button type="button" className="primary" onClick={createHandler}>
-          Create Table
+        <h1>Bàn</h1>
+        <button type="button" className="primary btn" onClick={createHandler}>
+        Thêm bàn
         </button>
       </div>
 
@@ -91,11 +91,11 @@ export default function TableListScreen(props) {
             <thead>
               <tr>
                 <th>ID</th>
-                <th>NAME</th>
-                <th>PRICE</th>
-                <th>CATEGORY</th>
-                <th>BRAND</th>
-                <th>ACTIONS</th>
+                <th>TÊN</th>
+                <th>GIÁ BÁN</th>
+                <th>THỂ LOẠI</th>
+                <th>NHÃN HIỆU</th>
+                <th>HÀNH ĐỘNG</th>
               </tr>
             </thead>
             <tbody>
@@ -109,19 +109,19 @@ export default function TableListScreen(props) {
                   <td>
                     <button
                       type="button"
-                      className="small"
+                      className="small btn-primary"
                       onClick={() =>
                         props.history.push(`/table/${table._id}/edit`)
                       }
                     >
-                      Edit
+                      Chỉnh sửa
                     </button>
                     <button
-                      type="button"
-                      className="small"
+                      type="button "
+                      className="small btn-danger w-25"
                       onClick={() => deleteHandler(table)}
                     >
-                      Delete
+                      Xóa
                     </button>
                   </td>
                 </tr>
