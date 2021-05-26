@@ -120,7 +120,7 @@ export const listBookings = ({ seller = '' }) => async (dispatch, getState) => {
     const { data } = await Axios.get(`/api/bookings?seller=${seller}`, {
       headers: { Authorization: `Bearer ${userInfo.token}` },
     });
-    console.log(data);
+    console.log("databooking" + data);
     dispatch({ type: BOOKING_LIST_SUCCESS, payload: data });
   } catch (error) {
     const message =

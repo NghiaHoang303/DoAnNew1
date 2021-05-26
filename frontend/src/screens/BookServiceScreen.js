@@ -26,7 +26,7 @@ export default function BookServiceScreen(props) {
   const dispatch = useDispatch();
   const tableList = useSelector((state) => state.tableList);
   const { loading, error, tables, page, pages } = tableList;
-  console.log('dddd', tableList)
+
 
   
 

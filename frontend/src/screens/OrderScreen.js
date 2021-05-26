@@ -1,7 +1,6 @@
 import Axios from 'axios';
 import { PayPalButton } from 'react-paypal-button-v2';
 import React, { useEffect, useState, useRef } from 'react';
-import ReactDOM from "react-dom"
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { deliverOrder, detailsOrder, payOrder } from '../actions/orderActions';
@@ -246,13 +245,8 @@ export default function OrderScreen(props) {
                       <PayPalButton
                         amount={order.totalPrice}
                         onSuccess={successPaymentHandler}
-           
-           
                       ></PayPalButton>
-                       {/* <PayPalButton
-                        createOrder={(data, actions) => createOrder(data, actions)}
-                        onApprove={(data, actions) => onApprove(data, actions)}
-                      /> */}
+                    
                     </>
                   )}
                 </li>
