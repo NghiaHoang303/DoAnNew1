@@ -219,9 +219,9 @@ export default function TableScreen(props) {
                     </div>
                   </form>
                 ) : (
-                  <MessageBox>
+                  <div>
                     Xin vui lòng <Link to="/signin">Đăng nhập</Link> viết một bài đánh giá
-                  </MessageBox>
+                  </div>
                 )}
               </li>
             </ul>

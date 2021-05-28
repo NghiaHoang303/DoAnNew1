@@ -217,9 +217,9 @@ export default function ProductScreen(props) {
                     </div>
                   </form>
                 ) : (
-                  <MessageBox>
+                  <div>
                     Xin vui lòng <Link to="/signin">Đăng nhập</Link>để  viết một bài đánh giá
-                  </MessageBox>
+                  </div>
                 )}
               </li>
             </ul>

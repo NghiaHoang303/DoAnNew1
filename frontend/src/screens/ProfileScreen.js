@@ -61,7 +61,7 @@ export default function ProfileScreen() {
   };
   return (
     <div>
-      <form className="form form-card" style ={{height :'900px'}} onSubmit={submitHandler}>
+      <form className="form form-card" style ={{height :'1300px'}} onSubmit={submitHandler}>
       <div className="decoration-card">
         <div>
             <h1>Thông tin người dùng</h1>
@@ -136,7 +136,7 @@ export default function ProfileScreen() {
             {user.isSeller && (
               <>
                 <h2>Seller</h2>
-                <div>
+                <div className = ''>
                   <label htmlFor="sellerName">Tên người bán</label>
                   <input
                     id="sellerName"

@@ -109,6 +109,7 @@ export default function RegisterScreen(props) {
           {error && <MessageBox variant="danger">{error}</MessageBox>}
           <div>
             <input
+             style={{color : '#111'}}
               type="text"
               id="name"
               placeholder="Enter name"
@@ -124,6 +125,7 @@ export default function RegisterScreen(props) {
             }
           <div>
             <input
+             style={{color : '#111'}}
               type="email"
               id="email"
               placeholder="Enter email"
@@ -134,6 +136,7 @@ export default function RegisterScreen(props) {
          <div>{!checkEmail(email) && <div className = 'message small w-100'>Ví dụ: tu@gmail.com phải có @</div>}</div> 
           <div>
             <input
+             style={{color : '#111'}}
               type="password"
               id="password"
               placeholder="Enter password"
@@ -144,6 +147,7 @@ export default function RegisterScreen(props) {
           <div>{!checkPassWord(password) && <div className = 'message small w-100'>Mật khẩu phải chứa cả số và chữ cái. Tối thiểu 6 ký tự</div>}</div> 
           <div>
             <input
+             style={{color : '#111'}}
               type="password"
               id="confirmPassword"
               placeholder="Enter confirm password"

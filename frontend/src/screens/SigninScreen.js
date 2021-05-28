@@ -44,6 +44,7 @@ export default function SigninScreen(props) {
           <div>
             <label htmlFor="email">Địa chỉ email</label>
             <input
+            style={{color : '#111'}}
               type="email"
               id="email"
               placeholder="Enter email"
@@ -54,6 +55,7 @@ export default function SigninScreen(props) {
           <div>
             <label htmlFor="password">Mật khẩu</label>
             <input
+          style={{color : '#111'}}
               type="password"
               id="password"
               placeholder="Enter password"

@@ -321,9 +321,9 @@ const getState = (addressArray) => {
               ></img> */}
             </div>
             <div className=" text-left-homeScreen " data-text="text-create">
-              <p className="check-text tracking-in-expand-fwd ">XEM</p>
-              <p className="second-text tracking-in-expand-fwd ">MÓN ĂN</p>
-              <p className="second-text tracking-in-expand-fwd ">NGON NHẤT</p>
+              <div className="check-text tracking-in-expand-fwd ">XEM</div>
+              <div className="second-text tracking-in-expand-fwd ">MÓN ĂN</div>
+              <div className="second-text tracking-in-expand-fwd ">NGON NHẤT</div>
             </div>{" "}
             <div className="text-left-homeScreen-bottom ">
               <p>hoặc là</p>
@@ -422,15 +422,15 @@ const getState = (addressArray) => {
             src="http://static1.squarespace.com/static/518ea9e4e4b0eb1ecff22776/518ea9e5e4b0eb1ecff2277a/58768871f5e231cc32548478/1536167840749/shutterstock_553173229.jpg?format=1500w"
           ></img>
           <div className="content-dish-special-left">
-            <p className="content-dish">hoang trung nghia</p>
-            <a href="#">Kiểm tra</a>
+            <p className="content-dish fw-bold">CÁ HỒI SỐT CAM</p>
+            <a href="#" className='fw-bold'>Kiểm tra</a>
           </div>
         </div>
-        <div className="session2">
-          <div className="content-session2">
+        <div className="session2 ">
+          <div className=" ">
             <p>YÊU CẦU ĐẶC BIỆT</p>
             <p>Mở đặc biệt</p>
-            <a href="#">Kiểm tra</a>
+            <a href="#" className='fw-bold'>Kiểm tra</a>
           </div>
         </div>
         <div className="session3">
@@ -439,8 +439,8 @@ const getState = (addressArray) => {
             src="https://cdn.shrm.org/image/upload/c_crop%2Ch_705%2Cw_1254%2Cx_0%2Cy_0/c_fit%2Cf_auto%2Cq_auto%2Cw_767/v1/Legal%20and%20Compliance/chef2m_zmfr42?databtoa=eyIxNng5Ijp7IngiOjAsInkiOjAsIngyIjoxMjU0LCJ5MiI6NzA1LCJ3IjoxMjU0LCJoIjo3MDV9fQ%3D%3D"
           ></img>
           <div className="content-dish-special-right">
-            <p className="content-dish">hoang trung nghia</p>
-            <a href="#">Kiểm tra</a>
+            <p className="content-dish fw-bold">BEEFSTEAK</p>
+            <a href="#" className= 'fw-bold'>Kiểm tra</a>
           </div>
           <div className="clear"></div>
         </div>

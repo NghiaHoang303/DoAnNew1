@@ -839,6 +839,12 @@ img.large {
 .loading {
   display: block !important;
   font-size: 20px;
+  padding: 20px
+}
+.loading-button {
+  margin-right: 10px;
+  height: 16px;
+  width: 16px;
 }
 .success {
   color: #20a020;

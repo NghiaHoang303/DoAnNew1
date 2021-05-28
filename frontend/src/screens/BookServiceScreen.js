@@ -104,8 +104,8 @@ export default function BookServiceScreen(props) {
 
           </div>
 
-    <div>
-      <h2  >Vị trí bàn nổi bật</h2>
+    <div className= 'mt-5'>
+     
      {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (

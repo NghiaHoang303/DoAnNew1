@@ -425,28 +425,30 @@ function App() {
             {userInfo && !userInfo.isAdmin && <ChatBox userInfo={userInfo} />}
           
             <div className="row">
-                <div className="col-4" style = {{ textAlign :''}}>
-                  <h2>DIAMOND PLACE</h2>
-                  <p>Chỉ từ 4.100.000đ/bàn</p>
-                  <p>Địa chỉ: 15A Hồ Văn Huê, P. 9, Q. Phú Nhuận</p>
-                  <p>Điện thoại: (028) 7109 8710</p>
-                  <p>Email: info@diamondplace.com.vn</p>
-                  <p>Hotline: 0979 80 80 80 - (028) 2229 2222</p>
-                  <p>Website: dp1.diamondplace.vn</p>
+                <div className="col-5  " style ={{fontSize : '20px', fontWeight: '500'}} >
+                  <div className= '' style = {{marginLeft: '5rem'}}>
+                    <h2 className ='text-white'>VietFood N&T</h2>
+                    <p>Chỉ từ 4.100.000đ/bàn</p>
+                    <p>Địa chỉ: Hem 1275 Phan Van Tri</p>
+                    <p>Điện thoại: (028) 7109 8710</p>
+                    <p>Email: info@diamondplace.com.vn</p>
+                    <p>Hotline: 0979 80 80 80 - (028) 2229 2222</p>
+                    <p>Website: dp1.VietFood.vn</p>
+                  </div>
                 </div>{" "}
-                <div className="col-4">
-                  <h2>GIỜ LÀM VIỆC</h2>
+                <div className="col-4 "  style ={{fontSize : '20px', fontWeight: '500'}}>
+                  <h2 className= 'text-white' >GIỜ LÀM VIỆC</h2>
                   <p>Thứ Hai – Chủ Nhật: 09:00 sáng – 09:30 tối</p>
                 </div>
-                <div className="col-4">
-                  <h2> DIAMOND PLACE II</h2>
+                <div className="col text-white"  style ={{fontSize : '20px', fontWeight: '500'}}>
+                  <h2 className = 'text-white'> VietFood N&T II</h2>
                   <p>Chỉ từ 2.990.000đ/bàn</p>
-                  <p>Địa chỉ: 584 Âu Cơ, P. 10, Q. Tân Bình</p>
+                  <p>Địa chỉ: Hẻm Đoàn Văn Cự</p>
                   <p>Điện thoại: (028) 6290 2222</p>
-                  <p>Email: info.dp2@diamondplace.com.vn</p>
+                  <p>Email: info.dp2@VietFood.com.vn</p>
                   <p>Hotline: 0902 68 00 22</p>
 
-                  <p>Website: dp2.diamondplace.vn</p>
+                  <p>Website: dp2.VietFood.vn</p>
                 </div>
               </div>
               <Link
