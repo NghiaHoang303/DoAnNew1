@@ -17,6 +17,13 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 // import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import thitbo from '../scss/images/Delivery.png'
+import boomxidau from '../scss/images/boxidau.jpeg'
+import bocuonhanh from '../scss/images/BoCuonHanh.jpg'
+import nemran from '../scss/images/nemran.jpg'
+import nuocrauma from '../scss/images/nuocRauMa.jpg'
+import cocktailChanh from '../scss/images/cocktailChanh.jpg'
+import blueOceanCocktail from '../scss/images/blueOceanCocktail.jpg'
+
 import drink from '../scss/images/nuocuong.png'
 import fastFood from '../scss/images/fastfood.png'
 import MapScreen from "./MapScreen";
@@ -28,15 +35,17 @@ import {
   withScriptjs,
   withGoogleMap,
   Marker,
+  InforWindown
 } from "react-google-maps";
 import AOS from "aos";
-import logo_v2 from "../scss/images/logo_v2.png";
 import logo_video from "../scss/images/logo_video.mp4";
 import Geocode from "react-geocode";
 import anh1 from '../scss/images/drink-1.jpg'
 import anh2 from '../scss/images/coffe1.jpg'
 import anh3 from '../scss/images/pizza.jpg'
 import anh4 from '../scss/images/monAnTruyenThongVietNam_3.jpg'
+import mapsIcon from '../scss/images/maps.png'
+import { Descriptions } from 'antd';
 
 Geocode.setApiKey("AIzaSyDVGjDTneZNSjh91mqVpqVmEshIYnxZhnI");
 
@@ -48,6 +57,7 @@ export default function HomeScreen() {
 
    //google map
 
+   const [selectorRes , setSelectorRes] = useState(null)
    React.state = {
     address: "",
     city: "",
@@ -65,16 +75,69 @@ export default function HomeScreen() {
     },
   };
 
+const  getCity= (addressArray) => {
+    let city = ''
+    for(let index = 0; index < addressArray.length; index++){
+      if(addressArray[index].types[0] && 'administrative_area_level_2' === addressArray[index].types[0]){
+        city = addressArray[index].long_name;
+        return city;
+      }
+    }
+     
+  } 
+
+const getArea= (addressArray) => {
+  let area ='';
+  for(let index = 0; index < addressArray.length; index++) {
+    if(addressArray[index].type[0]) {
+      for(let j= 0; j < addressArray.length; j++ ){
+        if('sublocality_level_1' ===  addressArray[index].types[j] || 'locality' === addressArray[index].types[j]) {
+          area = addressArray[index].long_name;
+          return area
+        }
+      }
+    }
+  }
+}  
+
+const getState = (addressArray) => {
+  let state = ''
+  for( let index = 0;index < addressArray.length; index++){
+    for (let index = 0; index < addressArray.length ; index++){
+      if(addressArray[index].types[0] && 'administrative_area_level_1' === addressArray[index].types[0]){
+        state = addressArray[index].long_name;
+        return state;
+      }
+    }
+  }
+}
+
   React.onMarkerDragEnd = (event) => {
     let newLat = event.latLng.lat();
     let newLng = event.latLng.lng();
 
+    console.log('new Lat,' , newLat)
     Geocode.fromLatLng(newLat, newLng).then((response) => {
       const address = response.results[0].formatted_address,
         addressArray = response.results[0].address_components,
         city = this.getCity(addressArray),
         area = this.getArea(addressArray),
         state = this.getState(addressArray);
+      this.setState({
+        address : (address) ? address : "",
+        area : (area) ? area : "",
+        city : (city) ? city : "",
+        state : (state) ? state : "",
+        markerPosition: {
+          lat: newLat,
+          lng: newLat,
+        },
+        mapPosition: {
+          lat: newLat,
+          lng: newLat
+        }
+
+      })
     });
     console.log(newLat);
   };
@@ -82,21 +145,78 @@ export default function HomeScreen() {
 
   function Map() {
     return (
+      <>
+      <div>
+          <Descriptions title="User Info" bordered>
+        <Descriptions.Item label="Product">Cloud Database</Descriptions.Item>
+        <Descriptions.Item label="Billing Mode">Prepaid</Descriptions.Item>
+        <Descriptions.Item label="Automatic Renewal">YES</Descriptions.Item>
+        <Descriptions.Item label="Order time">2018-04-24 18:00:00</Descriptions.Item>
+        <Descriptions.Item label="Usage Time" span={2}>
+          2019-04-24 18:00:00
+        </Descriptions.Item>
+      </Descriptions>,
+
+      </div>
       <GoogleMap
+       draggable={true}
+       onDragEnd= {this.onMarkerDragEnd}
         defaultZoom={10}
-        defaultCenter={{ lat: 10.83136, lng: 106.66875 }}
+        defaultCenter={{ lat: this.state.mapPosition.lat, lng: this.state.mapPosition.lng }}
+        defaultCenter= {{lat : 10.833601, lng: 106.670159 }}
       >
+       
+         <Marker
+          draggable={true}
+          onDragEnd={React.onMarkerDragEnd}
+          position={{ lat: this.state.mapPosition.lat, lng: this.state.mapPosition.lng }}
+          icon= {{
+            url: '../scss/images/maps.png'
+          }}
+        >
+          <InfoWindow>
+            <div>412 Quang  Trung - Go vap</div>
+          </InfoWindow>
+        </Marker> 
         <Marker
           draggable={true}
           onDragEnd={React.onMarkerDragEnd}
-          position={{ lat: 10.83136, lng: 106.66875 }}
+          position={{ lat: 10.833601, lng: 106.670159 }}
         >
           <InfoWindow>
-            <div>hello</div>
+            <div>Hem 1275  Phan Văn Trị</div>
           </InfoWindow>
+        
         </Marker>
+        {/* <Marker
+          draggable={true}
+          onDragEnd={React.onMarkerDragEnd}
+          position={{ lat: 10.949282, lng: 106.865136 }}
+        >
+          <InfoWindow>
+            <div>Hẻm Đoàn Văn Cự</div>
+          </InfoWindow>
+        </Marker> */}
+
+{
+      selectorRes &&  (
+        <InfoWindow
+        position={{ lat: 10.949282, lng: 106.865136 }}
+        onClick = {() => {
+          setSelectorRes(null);
+        }}
+        
+        >
+          <div>
+           Hẻm Đoàn Văn Cự
+          </div>
+        </InfoWindow>
+      )
+    }
       </GoogleMap>
-    );
+   </>
+   );
+   
   }
 
   const WrappedMap = withScriptjs(withGoogleMap(Map));
@@ -458,43 +578,44 @@ export default function HomeScreen() {
           <p>Thực đơn tốt nhất</p>
           <p>Đặc biệt</p>
         </div>
-        <div className="col-6 " data-aos="zoom-in-down">
-          <div className=" special-left ">
-            <img src= {thitbo} className = 'small' style = {{width :'80px'}}></img>
+        <div className="col-6 " data-aos="zoom-in-down" style ={{ textAlign : '-webkit-center'}}>
+          <div className="col-3 special-left">
+            <img src={boomxidau} className = 'small menu-list' ></img>
+          </div>
+          <div className="menu-content">
             <div className="content-special">
-              <p>BÒ OM XÌ DẦU</p>
-              <p>Thịt Bò</p>
+              <p>Bò om xì dầu</p>
+              <p>Lorem ipsum dolor sit</p>
             </div>
             <div className="content-special-left">
-              <p> $39</p>
+              <p> $10</p>
               <p className="status-special">starter</p>
             </div>
           </div>
-          <div className="menu-content"></div>
 
           <div className="col-3 special-left">
-            <img src="https://vinlove.net/wp-content/uploads/2020/11/dac-san-quang-tri-banh-it-la-gai.jpg"></img>
+            <img src={bocuonhanh} className = 'small menu-list' ></img>
           </div>
           <div className="menu-content">
             <div className="content-special">
-              <p>PASTA VỚI CÁ</p>
+              <p>Bò Cuốn Hành</p>
               <p>Lorem ipsum dolor sit</p>
             </div>
             <div className="content-special-left">
-              <p> $39</p>
+              <p> $8</p>
               <p className="status-special">starter</p>
             </div>
           </div>
           <div className="col-3 special-left">
-            <img src="https://vinlove.net/wp-content/uploads/2020/11/dac-san-quang-tri-banh-it-la-gai.jpg"></img>
+            <img src={nemran} className = 'small menu-list'></img>
           </div>
           <div className="menu-content">
             <div className="content-special">
-              <p>PASTA VỚI CÁ</p>
+              <p>Nem Rán</p>
               <p>Lorem ipsum dolor sit</p>
             </div>
             <div className="content-special-left">
-              <p> $39</p>
+              <p> $9</p>
               <p className="status-special">starter</p>
             </div>
           </div>
@@ -503,42 +624,42 @@ export default function HomeScreen() {
         </div>
         <div className=" col-6 special-right-general" data-aos="zoom-in-down">
           <div className="col-3 special-left">
-            <img src="https://vinlove.net/wp-content/uploads/2020/11/dac-san-quang-tri-banh-it-la-gai.jpg"></img>
+            <img src={nuocrauma} className = 'small menu-list' ></img>
           </div>
           <div className="menu-content">
             <div className="content-special">
-              <p>PASTA VỚI CÁ</p>
+              <p>Nước Rau Má</p>
               <p>Lorem ipsum dolor sit</p>
             </div>
             <div className="content-special-left">
-              <p> $39</p>
+              <p> $5</p>
               <p className="status-special">starter</p>
             </div>
           </div>
 
           <div className="col-3 special-left">
-            <img src="https://vinlove.net/wp-content/uploads/2020/11/dac-san-quang-tri-banh-it-la-gai.jpg"></img>
+            <img src={cocktailChanh} className = 'small menu-list'></img>
           </div>
           <div className="menu-content">
             <div className="content-special">
-              <p>PASTA VỚI CÁ</p>
+              <p>Cocktail Chanh</p>
               <p>Lorem ipsum dolor sit</p>
             </div>
             <div className="content-special-left">
-              <p> $39</p>
+              <p> $4 </p>
               <p className="status-special">starter</p>
             </div>
           </div>
           <div className="col-3 special-left">
-            <img src="https://vinlove.net/wp-content/uploads/2020/11/dac-san-quang-tri-banh-it-la-gai.jpg"></img>
+            <img src={blueOceanCocktail} className = 'small menu-list' ></img>
           </div>
           <div className="menu-content">
             <div className="content-special">
-              <p>PASTA VỚI CÁ</p>
+              <p>blue Ocean Cocktail</p>
               <p>Lorem ipsum dolor sit</p>
             </div>
             <div className="content-special-left">
-              <p> $39</p>
+              <p> $9</p>
               <p className="status-special">starter</p>
             </div>
           </div>

@@ -484,6 +484,10 @@ h1 {
   font-size: 30px;
   margin-bottom: 80px;
 }
+.menu-list {
+  width: 100px;
+  height: 100px;
+}
 .special-left {
   /* float: left; */
 }
@@ -513,8 +517,10 @@ h1 {
   font-size: 20px;
 }
 .status-special {
-  padding: 3px;
-  background-color: #e84c3d;
+  padding: 5px;
+  border-radius: 10px;
+  background: linear-gradient(40deg, rgb(87, 97, 248), rgb(144, 96, 255));
+  font-weight: 700;  
 }
 
 .menu-content {
