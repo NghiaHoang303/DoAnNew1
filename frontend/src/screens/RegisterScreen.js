@@ -94,8 +94,10 @@ export default function RegisterScreen(props) {
           </div>
           <div>
             <img
+
               src={restaurant_img4}
               style={{ width: "780px", height: "450px", borderRadius: "30%" }}
+              className='img-res-registry'
             ></img>
           </div>
         </div>

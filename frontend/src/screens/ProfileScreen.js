@@ -61,8 +61,8 @@ export default function ProfileScreen() {
   };
   return (
     <div>
-      <form className="form form-card" style ={{height :'1300px'}} onSubmit={submitHandler}>
-      <div className="decoration-card">
+      <form className="form form-card" style ={{height :'900px'}} onSubmit={submitHandler}>
+      <div className="decoration-card card-replace">
         <div>
             <h1>Thông tin người dùng</h1>
             <h2
@@ -75,7 +75,7 @@ export default function ProfileScreen() {
             >
               {userInfo.name}
             </h2>
-            <div className="img-user">
+            <div className="img-user " >
               <img src="https://www.allkpop.com/upload/2021/01/content/061123/1609950236-image.png"></img>
             </div>
         </div>

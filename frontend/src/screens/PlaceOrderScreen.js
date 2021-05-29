@@ -39,7 +39,7 @@ export default function PlaceOrderScreen(props) {
         <div className="col-9">
           <ul id ='nav-card'>
             <li  className="col-4" style={{ display: "inline-block" }}>
-              <div  className="card card-body card-Oder-Screen "  style ={{width :'200%'}}>
+              <div  className="card card-body card-Oder-Screen card-1200 "  style ={{width :'200%'}}>
                 <h2>Đang chuyển hàng</h2>
                 <p>
                   <strong>Tên:</strong> {cart.shippingAddress.fullName} <br />
@@ -52,7 +52,7 @@ export default function PlaceOrderScreen(props) {
             <li className="col-4 "
             //  style={{ display: "inline-block" }
              >
-              <div className="card card-body card-Oder-Screen "  style ={{width :'200%'}}>
+              <div className="card card-body card-Oder-Screen card-1200 "  style ={{width :'200%'}}>
                 <h2>Thanh toán</h2>
                 <p>
                   <strong>Phương pháp:</strong> {cart.paymentMethod}
@@ -60,7 +60,7 @@ export default function PlaceOrderScreen(props) {
               </div>
             </li>
             <li  className="col-4" style={{ display: "inline-block" }}  >
-              <div className="card card-body card-Oder-Screen " style ={{width :'200%'}}>
+              <div className="card card-body card-Oder-Screen card-1200 " style ={{width :'200%'}}>
                 <h2>Đặt hàng các mặt hàng</h2>
                 <ul>
                   {cart.cartItems.map((item) => (

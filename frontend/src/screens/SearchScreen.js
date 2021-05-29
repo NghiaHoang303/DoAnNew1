@@ -174,7 +174,7 @@ export default function SearchScreen(props) {
                   <Product key={product._id} product={product}></Product>
                 ))}
               </div>
-              <div className="row center pagination">
+              <div className="row center pagination pagination-responsive">
                 {[...Array(pages).keys()].map((x) => (
                   <Link
                     className={x + 1 === page ? 'active' : ''}

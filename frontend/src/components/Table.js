@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Rating from './Rating';
+import '../scss/cardShopping.css'
 
 export default function Table(props) {
   const { table } = props;
   return (
-    <div key={table._id} className="card">
+    <div key={table._id} className="card card-table-res">
       <Link to={`/table/${table._id}`}>
         <img className="medium" src={table.image} alt={table.name} />
       </Link>

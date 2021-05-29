@@ -165,25 +165,26 @@ export default function OrderScreen(props) {
             // style={{ display: "inline-block" }}
             >
               <div className="card card-body card-body-new ">
-                <h2 className = 'header-content-pay'>Đặt các mặt hàng</h2>
+                <h2 className = 'header-content-pay' >Đặt các mặt hàng</h2>
                 <ul>
                   {order.orderItems.map((item) => (
                     <li key={item.product}>
                       <div className="row">
-                        <div>
+                        <div className = 'col'>
                           <img
                             src={item.image}
                             alt={item.name}
                             className="small"
+                            style = {{width:'100px'}}
                           ></img>
                         </div>
-                        <div className="min-30">
+                        <div className="min-30 col">
                           <Link to={`/product/${item.product}`}>
                             {item.name}
                           </Link>
                         </div>
 
-                        <div>
+                        <div className="style-price col ">
                           {item.qty} x ${item.price} = ${item.qty * item.price}
                         </div>
                       </div>

@@ -156,7 +156,7 @@ export default function SearchScreen(props) {
                   <Table key={table._id} table={table}></Table>
                 ))}
               </div>
-              <div className="row center pagination">
+              <div className="row center pagination ">
                 {[...Array(pages).keys()].map((x) => (
                   <Link
                     className={x + 1 === page ? 'active' : ''}

@@ -144,7 +144,7 @@ export default function CartTableScreen(props) {
        
       </div>
       
-      <div className="col-1">
+      <div className="col-1 table-responsive">
         <div className="card card-body card-responsive-table" style ={{top :'80px'}}>
           <ul>
             <li>

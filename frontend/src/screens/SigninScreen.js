@@ -93,9 +93,10 @@ export default function SigninScreen(props) {
             width: "550px",
             marginTop: "-7rem",
           }}
+          className= 'res-signInImg'
           src={restaurant_img}
         ></img>
-        <div>
+        <div className='res-decoration-sign' >
           <label />
           <div style={{ textAlign: "center" }}>
           Khách hàng mới?{" "}

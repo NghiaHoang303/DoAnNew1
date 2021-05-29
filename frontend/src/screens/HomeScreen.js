@@ -451,7 +451,7 @@ const getState = (addressArray) => {
           <p>DỊCH VỤ CỦA CHÚNG TÔI</p>
         </div>
         <div className="row" data-aos="zoom-in-up">
-          <div className="content-left-services col">
+          <div className="content-left-services content-left-res-1200 col">
             {/* {loadingCategories ? (
               <LoadingBox></LoadingBox>
             ) : errorCategories ? (
@@ -472,7 +472,7 @@ const getState = (addressArray) => {
             <div className="">
               <Link className="" to="search/category/Thịt%20Bò">
                 <img
-                  className="img-card box"
+                  className="img-card box responsive-1200"
                   src={thitbo}
                   style= {{width : '250px'}}
                 ></img>
@@ -481,7 +481,7 @@ const getState = (addressArray) => {
             <div className="">
               <Link className="" to="/search/category/Món%20ăn%20truyền%20thống%20Việt%20Nam">
                 <img
-                  className="img-card box"
+                  className="img-card box responsive-1200"
                   src= {monan}
                   style= {{width : '250px'}}
                 ></img>
@@ -490,7 +490,7 @@ const getState = (addressArray) => {
             <div className="" data-aos="zoom-in-up" >
               <Link className="" to="/search/category/Nước%20uống">
                 <img
-                  className="img-card box"
+                  className="img-card box responsive-1200"
                   src= {drink} style= {{width : '250px'}}
                 ></img>
               </Link>
@@ -498,7 +498,7 @@ const getState = (addressArray) => {
             <div className="" data-aos="zoom-in-up">
               <Link className="" to ="/search/category/Món%20ăn%20nhanh">
                 <img
-                  className="img-card box img-responsive-special"
+                  className="img-card box img-responsive-special responsive-1200"
                   style={{ marginTop: "10px",width : '250px' }} 
                   src={fastFood}
                 ></img>
@@ -578,7 +578,7 @@ const getState = (addressArray) => {
           <p>Thực đơn tốt nhất</p>
           <p>Đặc biệt</p>
         </div>
-        <div className="col-6 " data-aos="zoom-in-down" style ={{ textAlign : '-webkit-center'}}>
+        <div className="col-6 " data-aos="zoom-in-down" >
           <div className="col-3 special-left">
             <img src={boomxidau} className = 'small menu-list' ></img>
           </div>

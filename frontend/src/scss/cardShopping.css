@@ -16,3 +16,28 @@
   /* justify-items: center; */
   text-align: justify;
 }
+
+@media only screen and (max-width: 1200px) {
+  .link-transform{
+    margin-left: -285% !important;
+  }
+
+    .card-table-res{
+      width: 29% !important;
+      
+    }
+    .row-responsive {
+      display: inline-flex !important;
+    }
+    .pagination{
+      position: absolute;
+      left: 50%;
+    }
+   
+    .table-responsive{
+      position: absolute !important;
+      right: 0 !important;
+      width: 30% !important;
+    }
+  
+}

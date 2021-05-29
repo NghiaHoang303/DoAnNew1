@@ -92,7 +92,9 @@ function App() {
     <BrowserRouter>
       <div className="grid-container">
         <header className="row-home"  style={{ height: "75px" }}>
-          <div className="btn-header " style={{ width: "24%", float: "left" }}>
+          <div className="btn-header "
+           style={{ width: "20%", float: "left" }}
+           >
             <button
               type="button"
               className="open-sidebar"
@@ -106,7 +108,7 @@ function App() {
           </div>
           <div
           className="option-navbar btn-header-responsive"
-          style={{ width: "30%", float: "left", lineHeight: "30px" }}
+          style={{ width: "20%", float: "left", lineHeight: "30px" }}
           >
             <Route
               render={({ history }) => (
@@ -114,11 +116,12 @@ function App() {
               )}
             ></Route>
           </div>
-          <div className="nav-responsive"
-            style={{ width: "40%" , float: "left", lineHeight: "80px" }}>
+          <div className="nav-responsive "
+            // style={{ width: "70%" , float: "left", lineHeight: "80px" }}
+            >
               <div
-              className="navbar-option"
-              style={{ float: "left", width: "20%", lineHeight: "80px" }}
+              className="navbar-option nav-option-basic"
+              // style={{ float: "left", width: "20%", lineHeight: "80px" }}
             >
             <Link to="/cart">
             <i className="fas fa-shopping-cart mr-3"></i>
@@ -131,9 +134,9 @@ function App() {
 
 
 
-            <Link to="/cartTable">
+            <Link className='lineHeight-responsive' to="/cartTable" style={{float: 'left', lineHeight:'60px'}} >
             <i class="fas fa-gift"></i>
-            Bàn
+             Bàn
               {cartTableItems.length > 0 && (
                 <span className="badge">{cartTableItems.length}</span>
               )}
@@ -141,7 +144,8 @@ function App() {
 
 
             {userInfo ? (
-              <div className="dropdown navbar-option"
+              <div className="dropdown navbar-option setting-height-text"
+              style={{float:'left', width:'auto'}}
               //  style={{ width: "30%" }}
                >
                 <Link to="#">
@@ -149,7 +153,7 @@ function App() {
                   {userInfo.name} <i className="fa fa-caret-down"></i>{' '}
                 </Link>
 
-                <ul className="dropdown-content "style ={{marginTop:'-2rem' , width :'300px'}}>
+                <ul className="dropdown-content "style ={{marginTop:'-2rem' , width :'350px'}}>
                   <li>
                     <Link to="/profile">
                     <i class="far fa-user-circle mr-3"></i>
@@ -177,10 +181,10 @@ function App() {
                 </ul>
               </div>
             ) : (
-              <Link to="/signin" className="navbar-option">Đăng nhập</Link>
+              <Link to="/signin" className="navbar-option nav-option-responsive">Đăng nhập</Link>
             )}
             {userInfo && userInfo.isSeller && (
-              <div className="dropdown">
+              <div className="dropdown setting-height-text">
                 <Link to="#admin">
                 Người bán <i className="fa fa-caret-down"></i>
                 </Link>
@@ -204,14 +208,14 @@ function App() {
               </div>
             )}
             {userInfo && userInfo.isAdmin && (
-              <div  className="dropdown navbar-option"
-              style={{ lineHeight: "30px", width: "30%" }}
+              <div  className="dropdown navbar-option setting-height-text"
+              // style={{ lineHeight: "30px", width: "30%" }}
               >
                 <Link to="#admin">
                 <i className="fas fa-users-cog mr-3"></i>
                 Admin <i className="fa fa-caret-down"></i>
                 </Link>
-                <ul className="dropdown-content text-white" style ={{width :' 300px '}}>
+                <ul className="dropdown-content text-white" style ={{width :' 350px '}}>
                   <li>
                     <i className="fas fa-chart-line mr-3  "></i>
                     <Link to="/dashboard">Biểu đồ sản phẩm</Link>

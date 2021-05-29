@@ -183,7 +183,7 @@ const getState = (addressArray) => {
       ) : (
         <>
           {tables.length === 0 && <MessageBox>không tìm thấy bàn</MessageBox>}
-          <div className="row center">
+          <div className="row center row-responsive">
             {tables.map((table) => (
               <Table key={table._id} table={table}></Table>
             ))}

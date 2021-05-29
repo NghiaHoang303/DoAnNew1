@@ -2,7 +2,7 @@
     width: 1400px;
     margin-bottom: 7rem;
     font-size: 16px;
-    height: 780px;
+    height: 900px;
     margin-top: 1rem;
     border-radius: 10px;
     /* background-image: url(./images/restaurant3.jpg); */
@@ -17,5 +17,16 @@
     margin: 0;
   
     /* margin-bottom: 5rem; */
+  }
+  @media only screen and (max-width: 1200px) {
+    .form-shipping{
+      height: 980px !important;
+    }
+    .img-card-table-responsive{
+      position: absolute;
+    width: 500px !important;
+    top: 24%;
+    right: 45%
+    }
   }
   
