@@ -20,7 +20,7 @@ export default function BookingHistoryScreen(props) {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <table className="table">
-          <thead>
+          <thead style={{textAlignLast: 'center'}}>
             <tr>
               <th>ID</th>
               <th>NGÀY</th>
@@ -29,7 +29,7 @@ export default function BookingHistoryScreen(props) {
               <th>CHỨC NĂNG</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody style={{textAlignLast: 'center'}}>
             {bookings.map((booking) => (
               <tr key={booking._id}>
                 <td>{booking._id}</td>

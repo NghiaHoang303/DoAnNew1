@@ -61,10 +61,10 @@ export default function ProfileScreen() {
   };
   return (
     <div>
-      <form className="form form-card" style ={{height :'900px'}} onSubmit={submitHandler}>
+      <form className="form form-card " style ={{height :'960px', paddingTop:'70px'}} onSubmit={submitHandler}>
       <div className="decoration-card card-replace">
-        <div>
-            <h1>Thông tin người dùng</h1>
+        <div className='' style={{marginTop: '60px'}}>
+            <h1 style={{fontSize: '45px'}}>Thông tin người dùng</h1>
             <h2
               style={{
                 fontSize: "30px",

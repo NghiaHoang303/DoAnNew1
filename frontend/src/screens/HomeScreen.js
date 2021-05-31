@@ -578,7 +578,7 @@ const getState = (addressArray) => {
           <p>Thực đơn tốt nhất</p>
           <p>Đặc biệt</p>
         </div>
-        <div className="col-6 " data-aos="zoom-in-down" >
+        <div className="col " data-aos="zoom-in-down" style ={{ textAlign: '-webkit-center'}} >
           <div className="col-3 special-left">
             <img src={boomxidau} className = 'small menu-list' ></img>
           </div>

@@ -121,6 +121,7 @@ function App() {
             >
               <div
               className="navbar-option nav-option-basic"
+              
               // style={{ float: "left", width: "20%", lineHeight: "80px" }}
             >
             <Link to="/cart">
@@ -131,8 +132,6 @@ function App() {
               )}
             </Link>
             </div>
-
-
 
             <Link className='lineHeight-responsive' to="/cartTable" style={{float: 'left', lineHeight:'60px'}} >
             <i class="fas fa-gift"></i>
@@ -181,29 +180,33 @@ function App() {
                 </ul>
               </div>
             ) : (
-              <Link to="/signin" className="navbar-option nav-option-responsive">Đăng nhập</Link>
+              <Link to="/signin" className="navbar-option nav-option-responsive"
+              style= {{lineHeight: '80px'}}
+              >Đăng nhập</Link>
             )}
             {userInfo && userInfo.isSeller && (
               <div className="dropdown setting-height-text">
                 <Link to="#admin">
-                Người bán <i className="fa fa-caret-down"></i>
+                Người bán <i className="fa fa-caret-down" ></i>
                 </Link>
-                <ul className="dropdown-content">
+                <ul className="dropdown-content" style={{width: '300px'}}>
                   <li>
+                  <i className="fas fa-cookie-bite mr-3 text-white"></i>
                     <Link to="/productlist/seller">Sản phẩm</Link>
                   </li>
                   <li>
+                  <i className="fas fa-dollar-sign mr-3 text-white"></i>
                     <Link to="/orderlist/seller">Đơn hàng</Link>
                   </li>
                   <li>
+                  <i class="fas fa-table mr-3 text-white"></i>
                     <Link to="/tablelist/seller">Bàn</Link>
                   </li>
                   <li>
+                  <i class="fas fa-table mr-3 text-white"></i>
                     <Link to="/bookinglist/seller">Đặt chỗ</Link>
                   </li>
-                  <li>
-                     <Link to="/support">Hỗ trợ</Link>
-                  </li>
+                 
                 </ul>
               </div>
             )}
@@ -255,8 +258,8 @@ function App() {
         </header>
         <aside className={sidebarIsOpen ? 'open' : ''}>
           <ul className="categories">
-            <li>
-              <strong>Categories</strong>
+            <li > 
+              <strong className='text-center' style= {{marginLeft: '36%'}}>MENU</strong>
               <button
                 onClick={() => setSidebarIsOpen(false)}
                 className="close-sidebar"

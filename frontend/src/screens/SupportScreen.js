@@ -130,7 +130,7 @@ export default function SupportScreen() {
           ></input>
         </div>
         {users.filter((x) => x._id !== userInfo._id).length === 0 && (
-          <MessageBox>Không tìm thấy người dùng trực tuyến</MessageBox>
+          <div>Không tìm thấy người dùng trực tuyến</div>
         )}
         <ul>
           {users
@@ -189,7 +189,7 @@ export default function SupportScreen() {
                   className="btn col"
                   style={{
                     position: "absolute",
-                    right: "460px",
+                    right: "490px",
                     bottom: "2rem",
                     width:'100px'
                   }}
