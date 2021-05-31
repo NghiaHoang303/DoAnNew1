@@ -90,7 +90,7 @@ export default function TableListScreen(props) {
       ) : (
         <>
           <table className="table">
-            <thead>
+            <thead style={{textAlignLast:'center'}}>
               <tr>
                 <th>ID</th>
                 <th>TÊN</th>
@@ -100,7 +100,7 @@ export default function TableListScreen(props) {
                 <th>HÀNH ĐỘNG</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody style={{textAlignLast:'center'}}> 
               {tables.map((table) => (
                 <tr key={table._id}>
                   <td>{table._id}</td>

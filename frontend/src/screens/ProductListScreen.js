@@ -95,7 +95,7 @@ export default function ProductListScreen(props) {
       ) : (
         <>
           <table className="table  table-create-product">
-            <thead>
+            <thead  style = {{textAlignLast:'center'}}>
               <tr>
                 <th>ID</th>
                 <th>TÊN</th>
@@ -105,7 +105,7 @@ export default function ProductListScreen(props) {
                 <th>HÀNH ĐỘNG</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody  style = {{textAlignLast:'center'}}>
               {products.map((product) => (
                 <tr key={product._id}>
                   <td>{product._id}</td>

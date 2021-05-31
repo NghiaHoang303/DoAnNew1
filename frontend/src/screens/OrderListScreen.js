@@ -39,7 +39,7 @@ export default function OrderListScreen(props) {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <table className="table">
-          <thead>
+          <thead  style = {{textAlignLast:'center'}}>
             <tr>
               <th>ID</th>
               <th>KHÁCH HÀNG</th>
@@ -50,7 +50,7 @@ export default function OrderListScreen(props) {
               <th>CHỨC NĂNG</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody  style = {{textAlignLast:'center'}}>
             {orders.map((order) => (
               <tr key={order._id}>
                 <td>{order._id}</td>

@@ -42,7 +42,7 @@ export default function UserListScreen(props) {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <table className="table">
-          <thead>
+          <thead  style = {{textAlignLast:'center'}}>
             <tr>
               <th>ID</th>
               <th>TÊN</th>
@@ -52,7 +52,7 @@ export default function UserListScreen(props) {
               <th>CHỨC NĂNG</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody  style = {{textAlignLast:'center'}}>
             {users.map((user) => (
               <tr key={user._id}>
                 <td>{user._id}</td>

@@ -39,7 +39,7 @@ export default function BookingListScreen(props) {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <table className="table">
-          <thead>
+          <thead style = {{textAlignLast:'center'}}>
             <tr>
               <th>ID</th>
               <th>NGƯỜI DÙNG</th>
@@ -49,7 +49,7 @@ export default function BookingListScreen(props) {
               <th>CHỨC NĂNG</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody  style = {{textAlignLast:'center'}}>
             {bookings.map((booking) => (
               <tr key={booking._id}>
                 <td>{booking._id}</td>
